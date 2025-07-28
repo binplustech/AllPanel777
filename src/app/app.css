@@ -1,0 +1,184 @@
+.casino-banners-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 10px;
+  .casino-banner-item {
+    box-shadow: 0 0 10px #2b2366;
+    width: calc(12.4% - 8.75px);
+    margin-right: 10px;
+    margin-left: 0;
+  }
+}
+
+.casino-banner-item {
+  width: calc(16.66% - 8.4px);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: 3s;
+  img {
+    border-radius: 0;
+    width: 100%;
+  }
+}
+
+.casino-banner-item.login-hover {
+  position: relative;
+}
+
+.casino-banner-item.login-hover div {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 1s;
+}
+
+.casino-banner-item.login-hover:hover div {
+  opacity: 1;
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1365px) {
+  .casino-banner-item {
+    width: 24.25%;
+  }
+}
+
+.top-winner-list-box {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  background-color: #ccc;
+  color: #222;
+  padding: 10px;
+  border-radius: 0;
+  justify-content: center;
+  width: 200px !important;
+  height: 200px;
+  align-items: center;
+  font-size: 14px;
+  margin: 10px;
+
+  img {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+.footer {
+  border-top: 1px solid #d6dedb;
+  margin-top: 0;
+  padding: 8px 0;
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+}
+
+.footer .support {
+  width: 100%;
+  display: flex;
+  background-color: #444;
+  padding: 8px 8px 8px 8px;
+  justify-content: center;
+  color: #ddd;
+  border-radius: 0;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.footer-menu ul {
+  display: inline-block;
+}
+
+.footer-menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.footer-menu ul li {
+  margin: 0 8px;
+  padding: 0 16px;
+  position: relative;
+  float: left;
+}
+
+.footer-menu ul li a {
+  color: #222;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.5s;
+  border-bottom: 1px solid #222222;
+  text-decoration: none;
+}
+
+.footer-box {
+  width: 90%;
+  margin: 8px auto 0;
+}
+
+.footer-top {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #222222;
+  padding-bottom: 4px;
+}
+
+.footer-top img {
+  max-height: 30px;
+  max-width: 100px;
+  margin-right: 10px;
+}
+
+.footer-top .secure-logo img {
+  max-height: 50px;
+}
+
+.footer-top .secure-logo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.login-box {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .home-new-header a {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+.home-new-header a {
+  color: #222;
+}
+
+.btn-demo {
+  margin-left: 5px;
+}
