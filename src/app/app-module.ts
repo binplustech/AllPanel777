@@ -6,18 +6,24 @@ import { App } from './app';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Sport } from './sport/sport';
+import {SlickCarouselModule} from "ngx-slick-carousel";
+import { Dashboard } from './dashboard/dashboard';
+import { VideoComponent } from './video-component/video-component';
 
 @NgModule({
   declarations: [
     App,
-    Sport
+    Sport,
+    Dashboard,
+    VideoComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    CarouselModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        CarouselModule,
+        SlickCarouselModule,
+    ],
   providers: [
     provideBrowserGlobalErrorListeners()
   ],

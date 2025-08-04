@@ -87,3 +87,426 @@ body {
   background-color: #03b37f;
   border-color: #03b37f;
 }
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logo-box {
+  padding: 4px 0;
+  text-align: center;
+  height: auto;
+}
+
+.logo {
+  padding: 5px;
+}
+
+.logo img {
+  max-height: 65px;
+  max-width: 100%;
+}
+
+.menu-box.casino-menu {
+  height: calc(100vh - 100px);
+  scrollbar-width: thin;
+  scrollbar-color: #333333 #000000;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.menu-box li {
+  cursor: pointer;
+}
+
+.menu-box li a {
+  position: relative;
+  color: #222;
+  padding: 8px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.casino-menu li .active,
+.casino-menu li .active:hover,
+.casino-menu li .active:focus {
+  background-color: #126e51;
+  color: #eeeeee;
+}
+
+.casino-table, .detail-page-container {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.casino-video {
+  position: relative;
+  background-image: linear-gradient(0deg, #100b1e 0%, #160d27 26.42%, #11091d 48.45%, #030309 100%);
+}
+
+.casino-video-title {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  background-color: #f8f9fa35;
+  padding: 5px;
+  z-index: 10;
+  text-align: center;
+  min-width: 180px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.casino-video-title .casino-name {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1;
+  color: #fdcf13;
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1599px) {
+  .casino-video-title .casino-name {
+    font-size: 14px;
+  }
+}
+
+.casino-video-rid {
+  font-weight: bold;
+  color: #ddd;
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 3px;
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1599px) {
+  .casino-video-rid {
+    font-size: 12px;
+  }
+}
+
+.casino-video .video-box-container {
+  max-width: calc(100% - 190px);
+  margin-left: auto;
+}
+
+.casino-video .video-box {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.casino-video .video-box>img, .casino-video .video-box>iframe {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 0;
+}
+
+.casino-video-cards.hide-cards {
+  width: 0 !important;
+}
+
+.poker1day .casino-video-cards {
+  width: 195px;
+  height: 75px;
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1599px) {
+  .poker1day .casino-video-cards {
+    width: 195px;
+    height: 75px;
+  }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1599px) {
+  .casino-video-cards {
+    width: 172px;
+    height: 135px;
+  }
+}
+
+.casino-video-cards {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px 20px 5px 5px;
+  height: 155px;
+  overflow: hidden;
+  transition: all 1s;
+  width: 195px;
+  border-radius: 0 8px 8px 0;
+  align-items: center;
+}
+
+.casino-cards-shuffle {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  width: auto !important;
+  font-size: 30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #b3b3b3;
+}
+
+.casino-video-cards-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  transition: all ease-in 1s;
+}
+
+.casino-video-cards.hide-cards .casino-video-cards-container {
+  width: 0;
+}
+
+.poker1day .casino-video-cards-container>div, .poker20 .casino-video-cards-container>div {
+  flex-wrap: wrap;
+}
+
+.casino-video-cards-container>div:last-child {
+  margin-bottom: 0;
+}
+
+.casino-video-cards-container>div {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1599px) {
+  .poker1day .dealer-name {
+    font-size: 14px;
+  }
+}
+
+.poker1day .dealer-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.casino-video-cards-container .dealer-name {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  justify-content: center;
+  white-space: nowrap;
+  color: #ffffff;
+}
+
+.casino-video-cards span img {
+  margin-right: 8px;
+  width: 50px;
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1599px) {
+  .casino-video-cards span img {
+    width: 42px;
+  }
+}
+
+.poker1day .casino-video-cards span img, .poker20 .casino-video-cards span img {
+  width: 27px;
+}
+
+.casino-timer {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.base-timer {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1599px) {
+  .base-timer {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__label.green, .base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1599px) {
+  .base-timer__label {
+    height: 70px;
+    width: 70px;
+    font-size: 34px;
+  }
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #ffffff;
+  font-family: timer;
+}
+
+.casino-video-right-icons {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.casino-video-lr-icon, .casino-video-home-icon, .casino-video-rules-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #999;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.casino-video-lr-icon i, .casino-video-home-icon i, .casino-video-rules-icon i {
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.fa-info-circle {
+  color: #ddd;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.5s;
+  vertical-align: middle;
+  border: 5px solid transparent;
+}
+
+.casino-video-lr-icon i, .casino-video-home-icon i, .casino-video-rules-icon i {
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.poker1day .casino-detail {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1599px) {
+  .casino-detail {
+    padding: 5px;
+  }
+}
+
+.casino-detail {
+  padding: 4px;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+}
+
+.poker1day .playerabox, .poker1day .playerbbox {
+  width: 39%;
+}
+
+.poker1day .playerafabcy {
+  padding: 6px;
+  padding-bottom: 0;
+  border: 2px solid #fc4242;
+  background-color: #fc42422e;
+  min-height: 72px;
+}
+
+.casino-box-row {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  padding: 2px 0;
+  align-items: center;
+  position: relative;
+}
+
+.poker1day .casino-nation-name {
+  background-color: transparent;
+}
+
+.poker1day .casino-nation-name {
+  width: 50%;
+  padding-right: 10px;
+  position: relative;
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1365px) {
+  .casino-nation-name {
+    font-size: 14px;
+  }
+}
+
+.casino-nation-name {
+  background-color: #444;
+  color: #ddd;
+  padding: 4px;
+  position: relative;
+}
+
+.casino-nation-name {
+  width: calc(100% - 148px);
+}
+
+.poker1day .casino-bl-box {
+  width: 50%;
+}
+
+.casino-bl-box {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
