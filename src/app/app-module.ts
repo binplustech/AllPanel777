@@ -9,13 +9,31 @@ import { Sport } from './sport/sport';
 import {SlickCarouselModule} from "ngx-slick-carousel";
 import { Dashboard } from './dashboard/dashboard';
 import { VideoComponent } from './video-component/video-component';
+import { Casino } from './casino/casino';
+import { Header } from './core/layout/header/header';
+import { Footer } from './core/layout/footer/footer';
+import { Sidebar } from './core/layout/sidebar/sidebar';
+import { Head } from './core/layout/head/head';
+import { Foot } from './core/layout/foot/foot';
+import { NewsBox } from './core/layout/news-box/news-box';
+import { UpcomingFixture } from './core/layout/upcoming-fixture/upcoming-fixture';
+import { Owncasino } from './pages/owncasino/owncasino';
 
 @NgModule({
   declarations: [
     App,
     Sport,
     Dashboard,
-    VideoComponent
+    VideoComponent,
+    Casino,
+    Header,
+    Footer,
+    Sidebar,
+    Head,
+    Foot,
+    NewsBox,
+    UpcomingFixture,
+    Owncasino
   ],
     imports: [
         BrowserModule,
