@@ -18,6 +18,8 @@ import { Foot } from './core/layout/foot/foot';
 import { NewsBox } from './core/layout/news-box/news-box';
 import { UpcomingFixture } from './core/layout/upcoming-fixture/upcoming-fixture';
 import { Owncasino } from './pages/owncasino/owncasino';
+import { MainWrapper } from './main-wrapper/main-wrapper';
+import { NotFoundPage } from './pages/not-found-page/not-found-page';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { Owncasino } from './pages/owncasino/owncasino';
     Foot,
     NewsBox,
     UpcomingFixture,
-    Owncasino
+    Owncasino,
+    MainWrapper,
+    NotFoundPage
   ],
     imports: [
         BrowserModule,
