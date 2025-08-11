@@ -10,12 +10,15 @@
         <nav class="navbar navbar-expand-sm justify-content-center"></nav>
         <div class="d-flex align-items-center">
           <div class="switch-theme day d-md-flex day">
-            <div class="day-theme">
-              <i class="fas fa-sun"></i>
-            </div>
-            <div class="night-theme d-none">
-              <i class="fas fa-moon"></i>
-            </div>
+            @if (theme === 'light') {
+              <div class="day-theme">
+                <i (click)="toggleTheme()" class="fas fa-sun"></i>
+              </div>
+            } @else {
+              <div class="night-theme">
+                <i (click)="toggleTheme()" class="fas fa-moon text-white"></i>
+              </div>
+            }
           </div>
           <div class="login-box">
             <a href="https://sitethemedata.com/apk/allpanel777-134.apk" target="_blank">
@@ -38,7 +41,7 @@
             <button class="btn btn-primary ml-1">
               Login
             </button>
-            <button type="submit" class="btn d-none-mobile btn-primary btn-demo ml-2">
+            <button type="submit" [routerLink]="['/sport']" class="btn d-none-mobile btn-primary btn-demo ml-2">
               Demo
             </button>
             <a href="https://sitethemedata.com/apk/allpanel777-134.apk" target="_blank">
@@ -94,7 +97,7 @@
   class="carousel"
   #slickModal="slick-carousel"
   [config]="slideConfig"
-  (init)="slickInit($event)"
+  (init)="slickInit()"
 >
   @for (slide of slideStore; track $index) {
     <div ngxSlickItem class="slide">
@@ -146,7 +149,7 @@
         class="carousel"
         #slickModal="slick-carousel"
         [config]="slideConfig"
-        (init)="slickInit($event)"
+        (init)="slickInit()"
       >
         @for (slide of userSlideStore; track $index) {
           <div ngxSlickItem class="slide">
