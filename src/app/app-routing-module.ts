@@ -15,12 +15,12 @@ const routes: Routes = [
     component: MainWrapper,
     children: [
       { path: 'sport', component: Sport },
-      { path: 'owncasino', component: Owncasino },
       { path: 'casino', component: Casino },
       { path: 'casino/:gameName', component: Casino },
       // { path: 'mediaplayer/:gameName/:id', component: Foot }
     ],
   },
+  { path: 'owncasino', component: Owncasino },
   { path: 'aviator', component: NotFoundPage },
   { path: 'othergames/:id', component: NotFoundPage },
   { path: 'fantasy', component: NotFoundPage },
