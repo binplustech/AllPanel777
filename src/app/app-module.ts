@@ -20,6 +20,9 @@ import { UpcomingFixture } from './core/layout/upcoming-fixture/upcoming-fixture
 import { Owncasino } from './pages/owncasino/owncasino';
 import { MainWrapper } from './main-wrapper/main-wrapper';
 import { NotFoundPage } from './pages/not-found-page/not-found-page';
+import { SportRightSidebar } from './sport/sport-right-sidebar/sport-right-sidebar';
+import { CasinoList } from './pages/owncasino/casino-list/casino-list';
+import { Logo } from './core/logo/logo';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { NotFoundPage } from './pages/not-found-page/not-found-page';
     UpcomingFixture,
     Owncasino,
     MainWrapper,
-    NotFoundPage
+    NotFoundPage,
+    SportRightSidebar,
+    CasinoList,
+    Logo
   ],
     imports: [
         BrowserModule,

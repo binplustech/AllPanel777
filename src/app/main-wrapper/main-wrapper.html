@@ -1,12 +1,15 @@
   <div class="wrapper">
     <app-header></app-header>
+    <app-logo></app-logo>
     <app-sidebar></app-sidebar>
     <div class="main-container">
       <app-head></app-head>
-      <div class="center-main-contentx">
+      <div class="center-main-content home-content">
         <app-news-box></app-news-box>
         <app-upcoming-fixture></app-upcoming-fixture>
-        <router-outlet />
+        <div class="center-container">
+          <router-outlet />
+        </div>
       </div>
     </div>
   </div>
