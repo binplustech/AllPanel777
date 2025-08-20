@@ -5,14 +5,26 @@ import {Dashboard} from './dashboard/dashboard';
 import { Casino } from './casino/casino';
 import { Owncasino } from './pages/owncasino/owncasino';
 import { Foot } from './core/layout/foot/foot';
+import {MainWrapper} from './main-wrapper/main-wrapper';
+import {NotFoundPage} from './pages/not-found-page/not-found-page';
 
 const routes: Routes = [
   { path: '', component: Dashboard },
-  { path: 'sport', component: Sport },
+  {
+    path: '',
+    component: MainWrapper,
+    children: [
+      { path: 'sport', component: Sport },
+      { path: 'casino', component: Casino },
+      { path: 'casino/:gameName', component: Casino },
+      // { path: 'mediaplayer/:gameName/:id', component: Foot }
+    ],
+  },
   { path: 'owncasino', component: Owncasino },
-  { path: 'casino', component: Casino },
-  { path: 'casino/:gameName', component: Casino },
-  { path: 'mediaplayer/:gameName/:id', component: Foot}
+  { path: 'aviator', component: NotFoundPage },
+  { path: 'othergames/:id', component: NotFoundPage },
+  { path: 'fantasy', component: NotFoundPage },
+  { path: 'slot', component: NotFoundPage }
 ];
 
 @NgModule({

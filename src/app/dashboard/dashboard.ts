@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
-export class Dashboard {
+export class Dashboard implements OnInit {
+  public theme: string = localStorage.getItem('theme') || 'dark';
   slideStore = [
     { id: 1, img: '/assets/teensin.jpg', title: 'Slide 1' },
     { id: 2, img: '/assets/worli2.jpg', title: 'Slide 2' },
@@ -69,7 +70,22 @@ export class Dashboard {
     { id: 6, img: '/assets/img/user-icon.png', player: 'ha***', time: '12:34', winAmount: 75262580 },
   ];
 
-  slickInit(e: any): void {
-    console.log('');
+   ngOnInit(): void {
+     this.theme = localStorage.getItem('theme') || 'dark';
+     this.onThemeChange(this.theme);
+   }
+
+  slickInit(): void { }
+
+  public toggleTheme(): void {
+    this.theme = this.theme === 'light' ? 'dark' : 'light';
+    this.onThemeChange(this.theme);
+  }
+
+  private onThemeChange(theme: string): void {
+    const attr = 'data-theme';
+    const html = document.documentElement;
+    html.setAttribute(attr, theme);
+    localStorage.setItem('theme', theme);
   }
 }
