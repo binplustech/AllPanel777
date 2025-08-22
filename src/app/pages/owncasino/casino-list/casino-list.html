@@ -139,10 +139,10 @@
                         </div>
                         <div class="tab-pane active">
                             <div class="casino-banners">
-                                @for (casino of casino_list; track $index) {
-                                    <div class="casino-banner-item"><a href="/casino/{{ casino }}" class="">
+                                @for (item of casino_list | keyvalue; track item.key) {
+                                    <div class="casino-banner-item"><a href="/casino/{{ item.key }}" class="">
                                         <div
-                                            style="background-size: cover; background-position: center center; padding-top: 53.33%; background-image: url(&quot;https://sitethemedata.com/casino_icons/lc/{{ casino }}.jpg&quot;), url(&quot;https://wver.sprintstaticdata.com/v158/static/front/img/casino/default-2.jpeg&quot;);">
+                                            style="background-size: cover; background-position: center center; padding-top: 53.33%; background-image: url(&quot;https://sitethemedata.com/casino_icons/lc/{{ item.value }}.jpg&quot;), url(&quot;https://wver.sprintstaticdata.com/v158/static/front/img/casino/default-2.jpeg&quot;);">
                                         </div>
                                     </a></div> <!----> <!----> <!----> <!---->
                                 }

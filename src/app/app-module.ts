@@ -32,6 +32,12 @@ import { Andarbahar } from './casino/casino-tables/andarbahar/andarbahar';
 import { Andarbahar2 } from './casino/casino-tables/andarbahar2/andarbahar2';
 import { Ab3 } from './casino/casino-tables/ab3/ab3';
 import { Ab4 } from './casino/casino-tables/ab4/ab4';
+import { Card32A } from './casino/casino-tables/card32-a/card32-a';
+import { Card32B } from './casino/casino-tables/card32-b/card32-b';
+import { Dragontigert20 } from './casino/casino-tables/dragontigert20/dragontigert20';
+import { Dragontigeroneday } from './casino/casino-tables/dragontigeroneday/dragontigeroneday';
+import { Dragontigerliont20 } from './casino/casino-tables/dragontigerliont20/dragontigerliont20';
+import { Dragontigert202 } from './casino/casino-tables/dragontigert202/dragontigert202';
 
 @NgModule({
   declarations: [
@@ -61,7 +67,13 @@ import { Ab4 } from './casino/casino-tables/ab4/ab4';
     Andarbahar,
     Andarbahar2,
     Ab3,
-    Ab4
+    Ab4,
+    Card32A,
+    Card32B,
+    Dragontigert20,
+    Dragontigeroneday,
+    Dragontigerliont20,
+    Dragontigert202
   ],
     imports: [
         BrowserModule,
