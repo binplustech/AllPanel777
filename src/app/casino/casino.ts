@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TABLE_COMPONENTS } from './casino-tables/table-loader';
 
 @Component({
   selector: 'app-casino',
@@ -9,13 +10,26 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class Casino implements OnInit {
+  // @Input() gameName!: string;
+  // @Input() dealerName!: string;
+  // @Input() chips!: number;
+  // @Input() customTemplate!: TemplateRef<any>;
+
   gameName: string = '';
+  gameActive: boolean = false;
+  activatedGame = [
+    'lucky7',
+    'lucky7eu'
+  ];
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.gameName = params.get('gameName') || 'default';
+      if (this.gameName && this.activatedGame.includes(this.gameName)) {
+        this.gameActive = true;
+      }
       this.loadGameContent();
     });
   }
@@ -23,5 +37,8 @@ export class Casino implements OnInit {
   loadGameContent() {
     console.log(`Load game: ${this.gameName}`);
     // You can use *ngIf or dynamic component loader here
+  }
+  get component() {
+    return TABLE_COMPONENTS[this.gameName] || null;
   }
 }

@@ -23,6 +23,8 @@ import { NotFoundPage } from './pages/not-found-page/not-found-page';
 import { SportRightSidebar } from './sport/sport-right-sidebar/sport-right-sidebar';
 import { CasinoList } from './pages/owncasino/casino-list/casino-list';
 import { Logo } from './core/logo/logo';
+import { Lucky7 } from './casino/casino-tables/lucky7/lucky7';
+import { Lucky7eu } from './casino/casino-tables/lucky7eu/lucky7eu';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { Logo } from './core/logo/logo';
     NotFoundPage,
     SportRightSidebar,
     CasinoList,
-    Logo
+    Logo,
+    Lucky7,
+    Lucky7eu
   ],
     imports: [
         BrowserModule,
