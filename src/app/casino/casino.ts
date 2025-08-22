@@ -18,8 +18,10 @@ export class Casino implements OnInit {
   gameName: string = '';
   gameActive: boolean = false;
   activatedGame = [
+    'lucky5',
     'lucky7',
-    'lucky7eu'
+    'lucky7eu',
+    'lucky7eu2'
   ];
 
   constructor(private route: ActivatedRoute) {}

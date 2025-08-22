@@ -139,11 +139,16 @@
                         </div>
                         <div class="tab-pane active">
                             <div class="casino-banners">
-                                <div class="casino-banner-item"><a href="/casino/lucky5" class="">
+                                @for (casino of casino_list; track $index) {
+                                    <div class="casino-banner-item"><a href="/casino/{{ casino }}" class="">
                                         <div
-                                            style="background-size: cover; background-position: center center; padding-top: 53.33%; background-image: url(&quot;https://sitethemedata.com/casino_icons/lc/lucky5.jpg&quot;), url(&quot;https://wver.sprintstaticdata.com/v158/static/front/img/casino/default-2.jpeg&quot;);">
+                                            style="background-size: cover; background-position: center center; padding-top: 53.33%; background-image: url(&quot;https://sitethemedata.com/casino_icons/lc/{{ casino }}.jpg&quot;), url(&quot;https://wver.sprintstaticdata.com/v158/static/front/img/casino/default-2.jpeg&quot;);">
                                         </div>
                                     </a></div> <!----> <!----> <!----> <!---->
+                                }
+
+                                <hr><hr>
+
                                 <div class="casino-banner-item"><a href="/casino/roulette12" class="">
                                         <div
                                             style="background-size: cover; background-position: center center; padding-top: 53.33%; background-image: url(&quot;https://sitethemedata.com/casino_icons/lc/roulette12.jpg&quot;), url(&quot;https://wver.sprintstaticdata.com/v158/static/front/img/casino/default-2.jpeg&quot;);">

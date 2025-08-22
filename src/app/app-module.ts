@@ -25,6 +25,10 @@ import { CasinoList } from './pages/owncasino/casino-list/casino-list';
 import { Logo } from './core/logo/logo';
 import { Lucky7 } from './casino/casino-tables/lucky7/lucky7';
 import { Lucky7eu } from './casino/casino-tables/lucky7eu/lucky7eu';
+import { Lucky5 } from './casino/casino-tables/lucky5/lucky5';
+import { Lucky7eu2 } from './casino/casino-tables/lucky7eu2/lucky7eu2';
+import { Lucky15 } from './casino/casino-tables/lucky15/lucky15';
+import { Andarbahar } from './casino/casino-tables/andarbahar/andarbahar';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,11 @@ import { Lucky7eu } from './casino/casino-tables/lucky7eu/lucky7eu';
     CasinoList,
     Logo,
     Lucky7,
-    Lucky7eu
+    Lucky7eu,
+    Lucky5,
+    Lucky7eu2,
+    Lucky15,
+    Andarbahar
   ],
     imports: [
         BrowserModule,

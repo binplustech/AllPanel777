@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class CasinoList {
 
+  casino_list = [
+    'lucky5',
+    'lucky7',
+    'lucky7eu',
+    'lucky7eu2',
+    'lucky15'
+  ];
+
 }
