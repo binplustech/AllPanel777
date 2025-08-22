@@ -38,6 +38,9 @@ import { Dragontigert20 } from './casino/casino-tables/dragontigert20/dragontige
 import { Dragontigeroneday } from './casino/casino-tables/dragontigeroneday/dragontigeroneday';
 import { Dragontigerliont20 } from './casino/casino-tables/dragontigerliont20/dragontigerliont20';
 import { Dragontigert202 } from './casino/casino-tables/dragontigert202/dragontigert202';
+import { Pokeroneday } from './casino/casino-tables/pokeroneday/pokeroneday';
+import { Pokert20 } from './casino/casino-tables/pokert20/pokert20';
+import { Poker6player } from './casino/casino-tables/poker6player/poker6player';
 
 @NgModule({
   declarations: [
@@ -73,7 +76,10 @@ import { Dragontigert202 } from './casino/casino-tables/dragontigert202/dragonti
     Dragontigert20,
     Dragontigeroneday,
     Dragontigerliont20,
-    Dragontigert202
+    Dragontigert202,
+    Pokeroneday,
+    Pokert20,
+    Poker6player
   ],
     imports: [
         BrowserModule,

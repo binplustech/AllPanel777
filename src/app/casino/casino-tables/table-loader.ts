@@ -14,6 +14,9 @@ import { Dragontigert20 } from './dragontigert20/dragontigert20';
 import { Dragontigeroneday } from './dragontigeroneday/dragontigeroneday';
 import { Dragontigerliont20 } from './dragontigerliont20/dragontigerliont20';
 import { Dragontigert202 } from './dragontigert202/dragontigert202';
+import { Pokeroneday } from './pokeroneday/pokeroneday';
+import { Pokert20 } from './pokert20/pokert20';
+import { Poker6player } from './poker6player/poker6player';
 
 export const TABLE_COMPONENTS: Record<string, any> = {
   lucky5: Lucky5,
@@ -30,6 +33,8 @@ export const TABLE_COMPONENTS: Record<string, any> = {
   dragontigert20: Dragontigert20,
   dragontigeroneday: Dragontigeroneday,
   dragontigerliont20: Dragontigerliont20,
-  dragontigert202: Dragontigert202,  
-
+  dragontigert202: Dragontigert202,
+  pokeroneday: Pokeroneday, //poker6
+  pokert20: Pokert20, //poker20
+  poker6player : Poker6player
 };

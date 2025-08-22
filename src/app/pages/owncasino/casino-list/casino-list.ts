@@ -24,7 +24,9 @@ export class CasinoList {
     'dragontigeroneday':'dt6',
     'dragontigerliont20':'dtl20',
     'dragontigert202':'dt202',
-
+    'pokeroneday':'poker6',
+    'pokert20':'poker20',
+    'poker6player':'poker6player'
   };
 
 }
