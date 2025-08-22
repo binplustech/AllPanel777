@@ -29,6 +29,9 @@ import { Lucky5 } from './casino/casino-tables/lucky5/lucky5';
 import { Lucky7eu2 } from './casino/casino-tables/lucky7eu2/lucky7eu2';
 import { Lucky15 } from './casino/casino-tables/lucky15/lucky15';
 import { Andarbahar } from './casino/casino-tables/andarbahar/andarbahar';
+import { Andarbahar2 } from './casino/casino-tables/andarbahar2/andarbahar2';
+import { Ab3 } from './casino/casino-tables/ab3/ab3';
+import { Ab4 } from './casino/casino-tables/ab4/ab4';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { Andarbahar } from './casino/casino-tables/andarbahar/andarbahar';
     Lucky5,
     Lucky7eu2,
     Lucky15,
-    Andarbahar
+    Andarbahar,
+    Andarbahar2,
+    Ab3,
+    Ab4
   ],
     imports: [
         BrowserModule,

@@ -13,7 +13,11 @@ export class CasinoList {
     'lucky7',
     'lucky7eu',
     'lucky7eu2',
-    'lucky15'
+    'lucky15',
+    'andarbahar',
+    'andarbahar2',
+    'ab3',
+    'ab4'
   ];
 
 }
