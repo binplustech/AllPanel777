@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://cricket.apigang.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
