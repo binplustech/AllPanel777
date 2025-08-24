@@ -41,6 +41,7 @@ import { Dragontigert202 } from './casino/casino-tables/dragontigert202/dragonti
 import { Pokeroneday } from './casino/casino-tables/pokeroneday/pokeroneday';
 import { Pokert20 } from './casino/casino-tables/pokert20/pokert20';
 import { Poker6player } from './casino/casino-tables/poker6player/poker6player';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { Poker6player } from './casino/casino-tables/poker6player/poker6player';
         BrowserAnimationsModule,
         CarouselModule,
         SlickCarouselModule,
+		HttpClientModule
     ],
   providers: [
     provideBrowserGlobalErrorListeners()
