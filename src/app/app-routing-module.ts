@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Sport } from './sport/sport';
-import {Dashboard} from './dashboard/dashboard';
+import { Dashboard } from './dashboard/dashboard';
 import { Casino } from './casino/casino';
 import { Owncasino } from './pages/owncasino/owncasino';
-import { Foot } from './core/layout/foot/foot';
 import {MainWrapper} from './main-wrapper/main-wrapper';
 import {NotFoundPage} from './pages/not-found-page/not-found-page';
 
