@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IData } from "../../../models/casino.model";
 
 @Component({
   selector: 'app-pokert20',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './pokert20.css'
 })
 export class Pokert20 {
-
+	@Input() gameData!: IData | null;
 }

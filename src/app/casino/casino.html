@@ -1,13 +1,11 @@
 <div class="casino-container-w">
     <div class="casino-center">
         <div class="casino-container">
-          <!---->
           <div class="casino-table lucky7">
             <div class="casino-video">
-              <!---->
               <div class="casino-video-title">
                 <span class="casino-name">{{ gameName }}</span>
-                <div class="casino-video-rid"> Round ID: {{ gameData.mid }} </div>
+                <div class="casino-video-rid"> Round ID: {{ gameData()?.mid }} </div>
               </div>
               <div class="video-box-container">
                 <div class="video-box">
@@ -18,7 +16,7 @@
                 <div class="casino-cards-shuffle">
                   <i class="fas fa-grip-lines-vertical"></i>
                 </div>
-                  @if (component) {
+                  @if (gameData()) {
                       <div class="casino-video-cards-container">
                           <div>
                     <span>
@@ -42,11 +40,10 @@
                     </g>
                   </svg>
                   <span class="base-timer__label red">
-                    <span>{{ gameData.lt }}</span>
+                    <span>{{ gameData()?.lt }}</span>
                   </span>
                 </div>
               </div>
-              <!---->
               <div class="casino-video-right-icons">
                 <div title="Home" class="casino-video-home-icon">
                   <a href="/owncasino">
@@ -61,14 +58,50 @@
               <!---->
             </div>
             <!-- Custom Section (changes per table) -->
-              @if (component) {
-                  <ng-container *ngComponentOutlet="component"></ng-container>
-              } @else {
-                  <div class="casino-detail">
-                      <div class="casino-box low-high-box">
-                          COMING SOON
+              @if (gameData()) {
+                  @if (CasinoTablesType.lucky7) {
+                      <app-lucky7 [gameData]="gameData()"></app-lucky7>
+                  } @else if (CasinoTablesType.lucky7eu) {
+                      <app-lucky7eu [gameData]="gameData()"></app-lucky7eu>
+                  } @else if (CasinoTablesType.lucky7eu2) {
+                      <app-lucky7eu [gameData]="gameData()"></app-lucky7eu>
+                  } @else if (CasinoTablesType.lucky5) {
+                      <app-lucky5 [gameData]="gameData()"></app-lucky5>
+                  } @else if (CasinoTablesType.lucky15) {
+                      <app-lucky15 [gameData]="gameData()"></app-lucky15>
+                  } @else if (CasinoTablesType.ab3) {
+                      <app-ab3 [gameData]="gameData()"></app-ab3>
+                  } @else if (CasinoTablesType.ab4) {
+                      <app-ab4 [gameData]="gameData()"></app-ab4>
+                  } @else if (CasinoTablesType.andarbahar) {
+                      <app-andarbahar [gameData]="gameData()"></app-andarbahar>
+                  } @else if (CasinoTablesType.andarbahar2) {
+                      <app-andarbahar2 [gameData]="gameData()"></app-andarbahar2>
+                  } @else if (CasinoTablesType["Card32-A"]) {
+                      <app-card32-a [gameData]="gameData()"></app-card32-a>
+                  } @else if (CasinoTablesType["Card32-B"]) {
+                      <app-card32-b [gameData]="gameData()"></app-card32-b>
+                  } @else if (CasinoTablesType.dragontigerliont20) {
+                      <app-dragontigerliont20 [gameData]="gameData()"></app-dragontigerliont20>
+                  } @else if (CasinoTablesType.dragontigeroneday) {
+                      <app-dragontigeroneday [gameData]="gameData()"></app-dragontigeroneday>
+                  } @else if (CasinoTablesType.dragontigert20) {
+                      <app-dragontigert20 [gameData]="gameData()"></app-dragontigert20>
+                  } @else if (CasinoTablesType.dragontigert202) {
+                      <app-dragontigert202 [gameData]="gameData()"></app-dragontigert202>
+                  } @else if (CasinoTablesType.poker6player) {
+                      <app-poker6player [gameData]="gameData()"></app-poker6player>
+                  } @else if (CasinoTablesType.pokeroneday) {
+                      <app-pokeroneday [gameData]="gameData()"></app-pokeroneday>
+                  } @else if (CasinoTablesType.pokert20) {
+                      <app-pokert20 [gameData]="gameData()"></app-pokert20>
+                  } @else {
+                      <div class="casino-detail">
+                          <div class="casino-box low-high-box">
+                              COMING SOON
+                          </div>
                       </div>
-                  </div>
+                  }
               }
             <!-- <ng-container *ngTemplateOutlet="customTemplate;"></ng-container> -->
             <!---->
@@ -85,61 +118,57 @@
         <!---->
         <!---->
         <span>
-          <!---->
-          <!---->
         </span>
-        <!---->
-        <!---->
-        <!---->
-        <!---->
         <div class="casino-place-bet">
           <div class="casino-place-bet-title">
             <span>Last Results</span>
           </div>
-          <div class="casino-video-last-results" *ngIf="component">
+            @if (gameData()) {
+                <div class="casino-video-last-results">
             <span class="resultlow">L
-              <!---->
-              <!---->
+                <!---->
+                <!---->
             </span>
-            <span class="resulthigh">
+                    <span class="resulthigh">
               <!----> H
-              <!---->
+                        <!---->
             </span>
-            <span class="resultlow">L
-              <!---->
-              <!---->
+                    <span class="resultlow">L
+                        <!---->
+                        <!---->
             </span>
-            <span class="resulthigh">
+                    <span class="resulthigh">
               <!----> H
-              <!---->
+                        <!---->
             </span>
-            <span class="resulthigh">
+                    <span class="resulthigh">
               <!----> H
-              <!---->
+                        <!---->
             </span>
-            <span class="resultlow">L
-              <!---->
-              <!---->
+                    <span class="resultlow">L
+                        <!---->
+                        <!---->
             </span>
-            <span class="resulttie">
+                    <span class="resulttie">
               <!---->
-              <!----> T
+                        <!----> T
             </span>
-            <span class="resultlow">L
-              <!---->
-              <!---->
+                    <span class="resultlow">L
+                        <!---->
+                        <!---->
             </span>
-            <span class="resulthigh">
+                    <span class="resulthigh">
               <!----> H
-              <!---->
+                        <!---->
             </span>
-            <span class="resultlow">L
-              <!---->
-              <!---->
+                    <span class="resultlow">L
+                        <!---->
+                        <!---->
             </span>
-            <!-- <a href="#" class="result-more"> ... </a> -->
-            <!---->
-          </div>
+                    <!-- <a href="#" class="result-more"> ... </a> -->
+                    <!---->
+                </div>
+            }
         </div>
         <span></span>
       </div>

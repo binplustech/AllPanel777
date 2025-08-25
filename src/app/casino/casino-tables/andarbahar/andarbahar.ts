@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IData } from "../../../models/casino.model";
 
 @Component({
   selector: 'app-andarbahar',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './andarbahar.css'
 })
 export class Andarbahar {
-
+	@Input() gameData!: IData | null;
 }

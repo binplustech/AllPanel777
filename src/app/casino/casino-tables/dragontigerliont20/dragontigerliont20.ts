@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IData } from "../../../models/casino.model";
 
 @Component({
   selector: 'app-dragontigerliont20',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './dragontigerliont20.css'
 })
 export class Dragontigerliont20 {
-
+	@Input() gameData!: IData | null;
 }

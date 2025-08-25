@@ -1,7 +1,8 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, WritableSignal, signal, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TABLE_COMPONENTS } from './casino-tables/table-loader';
+import { CasinoTablesType } from './casino-tables/table-loader';
 import { CasinoService } from "../services/casino.service";
+import { ICasino, IData, ISub } from "../models/casino.model";
 
 @Component({
 	selector: 'app-casino',
@@ -10,14 +11,16 @@ import { CasinoService } from "../services/casino.service";
 	styleUrl: './casino.css'
 })
 
-export class Casino implements OnInit {
+export class Casino implements OnInit, OnDestroy {
 	private readonly casinoService = inject(CasinoService);
+	private readonly route = inject(ActivatedRoute);
+	private intervalId: number | null = null;
 
+	public gameData: WritableSignal<IData | null> = signal(null);
 	gameName: string = '';
-	gameData: any;
-	bets: any[] = [];
+	bets: ISub[] = [];
 
-	constructor(private route: ActivatedRoute) {}
+	constructor() {}
 
 	ngOnInit(): void {
 		this.route.paramMap.subscribe(params => {
@@ -26,22 +29,35 @@ export class Casino implements OnInit {
 		});
 	}
 
+	ngOnDestroy(): void {
+		if (this.intervalId) {
+			clearInterval(this.intervalId);
+		}
+	}
+
 	loadGameContent(gameName: string): void {
-		console.log('Loading game content for:', gameName);
 		this.casinoService.getCasinoData(gameName).subscribe({
-			next: (data): void => {
-				console.log('Casino data loaded:', data);
+			next: (data: ICasino): void => {
 				if (data.success) {
-					this.gameData = data.data;
-					this.bets = data.data.sub;  // array of bet options
+					this.gameData.set(data.data);
+					this.bets = data.data.sub;
+					this.startInterval();
 				}
 			},
-			error: (error): void => {
-				console.error('Error loading casino data:', error);
+			error: (): void => {
+				this.gameName = 'default';
 			}
 		});
 	}
-	get component() {
-		return TABLE_COMPONENTS[this.gameName] || null;
+
+	private startInterval(): void {
+		if (this.intervalId) {
+			clearInterval(this.intervalId);
+		}
+		this.intervalId = setInterval((): void => {
+			this.loadGameContent(this.gameName);
+		});
 	}
+
+	protected readonly CasinoTablesType = CasinoTablesType;
 }

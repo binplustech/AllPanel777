@@ -38,3 +38,24 @@ export const TABLE_COMPONENTS: Record<string, any> = {
   pokert20: Pokert20, //poker20
   poker6player : Poker6player
 };
+
+export enum CasinoTablesType {
+	lucky5= 'Lucky5',
+	lucky7= 'Lucky7',
+	lucky7eu= 'Lucky7eu',
+	lucky7eu2= 'Lucky7eu2',
+	lucky15= 'Lucky15',
+	andarbahar= 'ab20',
+	andarbahar2= 'abj',
+	ab3= 'Ab3',
+	ab4= 'Ab4',
+	'Card32-A'= 'card32',
+	'Card32-B'= 'card32eu',
+	dragontigert20= 'Dragontigert20',
+	dragontigeroneday= 'Dragontigeroneday',
+	dragontigerliont20= 'Dragontigerliont20',
+	dragontigert202= 'Dragontigert202',
+	pokeroneday= 'poker6',
+	pokert20= 'poker20',
+	poker6player= ' Poker6player',
+}

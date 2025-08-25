@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IData } from "../../../models/casino.model";
 
 @Component({
   selector: 'app-lucky7eu',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './lucky7eu.css'
 })
 export class Lucky7eu {
-
+	@Input() gameData!: IData | null;
 }
