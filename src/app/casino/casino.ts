@@ -15,6 +15,7 @@ export class Casino implements OnInit, OnDestroy {
 	private readonly casinoService = inject(CasinoService);
 	private readonly route = inject(ActivatedRoute);
 	private intervalId: number | null = null;
+	public currentGameName: CasinoTablesType = CasinoTablesType.default;
 
 	public gameData: WritableSignal<IData | null> = signal(null);
 	gameName: string = '';
@@ -25,7 +26,8 @@ export class Casino implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.route.paramMap.subscribe(params => {
 			this.gameName = params.get('gameName') || 'default';
-			this.loadGameContent(this.gameName);
+			this.currentGameName = CasinoTablesType[this.gameName as keyof typeof CasinoTablesType];
+			this.loadGameContent(CasinoTablesType[this.gameName as keyof typeof CasinoTablesType] || 'default');
 		});
 	}
 
@@ -56,7 +58,7 @@ export class Casino implements OnInit, OnDestroy {
 		}
 		this.intervalId = setInterval((): void => {
 			this.loadGameContent(this.gameName);
-		});
+		}, 1000);
 	}
 
 	protected readonly CasinoTablesType = CasinoTablesType;

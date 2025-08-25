@@ -59,41 +59,41 @@
             </div>
             <!-- Custom Section (changes per table) -->
               @if (gameData()) {
-                  @if (CasinoTablesType.lucky7) {
+                  @if (CasinoTablesType.lucky7 === currentGameName) {
                       <app-lucky7 [gameData]="gameData()"></app-lucky7>
-                  } @else if (CasinoTablesType.lucky7eu) {
-                      <app-lucky7eu [gameData]="gameData()"></app-lucky7eu>
-                  } @else if (CasinoTablesType.lucky7eu2) {
-                      <app-lucky7eu [gameData]="gameData()"></app-lucky7eu>
-                  } @else if (CasinoTablesType.lucky5) {
-                      <app-lucky5 [gameData]="gameData()"></app-lucky5>
-                  } @else if (CasinoTablesType.lucky15) {
+                  } @else if (CasinoTablesType.lucky7eu === currentGameName) {
+                      <app-lucky7 [gameData]="gameData()"></app-lucky7>
+                  } @else if (CasinoTablesType.lucky7eu2 === currentGameName) {
+                      <app-lucky7 [gameData]="gameData()"></app-lucky7>
+                  } @else if (CasinoTablesType.lucky5 === currentGameName) {
+                      <app-lucky7 [gameData]="gameData()"></app-lucky7>
+                  } @else if (CasinoTablesType.lucky15 === currentGameName) {
                       <app-lucky15 [gameData]="gameData()"></app-lucky15>
-                  } @else if (CasinoTablesType.ab3) {
+                  } @else if (CasinoTablesType.ab3 === currentGameName) {
                       <app-ab3 [gameData]="gameData()"></app-ab3>
-                  } @else if (CasinoTablesType.ab4) {
-                      <app-ab4 [gameData]="gameData()"></app-ab4>
-                  } @else if (CasinoTablesType.andarbahar) {
+                  } @else if (CasinoTablesType.ab4 === currentGameName) {
+                      <app-ab3 [gameData]="gameData()"></app-ab3>
+                  } @else if (CasinoTablesType.andarbahar  === currentGameName) {
                       <app-andarbahar [gameData]="gameData()"></app-andarbahar>
-                  } @else if (CasinoTablesType.andarbahar2) {
+                  } @else if (CasinoTablesType.andarbahar2  === currentGameName) {
                       <app-andarbahar2 [gameData]="gameData()"></app-andarbahar2>
-                  } @else if (CasinoTablesType["Card32-A"]) {
+                  } @else if (CasinoTablesType["Card32-A"] === currentGameName) {
                       <app-card32-a [gameData]="gameData()"></app-card32-a>
-                  } @else if (CasinoTablesType["Card32-B"]) {
+                  } @else if (CasinoTablesType["Card32-B"] === currentGameName) {
                       <app-card32-b [gameData]="gameData()"></app-card32-b>
-                  } @else if (CasinoTablesType.dragontigerliont20) {
+                  } @else if (CasinoTablesType.dragontigerliont20 === currentGameName) {
                       <app-dragontigerliont20 [gameData]="gameData()"></app-dragontigerliont20>
-                  } @else if (CasinoTablesType.dragontigeroneday) {
+                  } @else if (CasinoTablesType.dragontigeroneday === currentGameName) {
                       <app-dragontigeroneday [gameData]="gameData()"></app-dragontigeroneday>
-                  } @else if (CasinoTablesType.dragontigert20) {
+                  } @else if (CasinoTablesType.dragontigert20 === currentGameName) {
                       <app-dragontigert20 [gameData]="gameData()"></app-dragontigert20>
-                  } @else if (CasinoTablesType.dragontigert202) {
+                  } @else if (CasinoTablesType.dragontigert202 === currentGameName) {
                       <app-dragontigert202 [gameData]="gameData()"></app-dragontigert202>
-                  } @else if (CasinoTablesType.poker6player) {
+                  } @else if (CasinoTablesType.poker6player === currentGameName) {
                       <app-poker6player [gameData]="gameData()"></app-poker6player>
-                  } @else if (CasinoTablesType.pokeroneday) {
+                  } @else if (CasinoTablesType.pokeroneday === currentGameName) {
                       <app-pokeroneday [gameData]="gameData()"></app-pokeroneday>
-                  } @else if (CasinoTablesType.pokert20) {
+                  } @else if (CasinoTablesType.pokert20 === currentGameName) {
                       <app-pokert20 [gameData]="gameData()"></app-pokert20>
                   } @else {
                       <div class="casino-detail">

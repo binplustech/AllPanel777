@@ -207,193 +207,34 @@
   </div>
   <div>
     <div class="ab-bg">
-      <div class="andar-cards-box text-center suspended">
+      <div class="andar-cards-box text-center" [ngClass]="{ 'suspended': gameData?.child[0]?.b === 0 }">
         <h5 class="w-100 text-center text-playera">Andar</h5>
-        <div class="casino-card-item">
-          <div>1</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/1.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>0</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/0.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>2</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/3.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>0</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/0.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>2</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/5.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>0</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/0.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>0</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/0.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>2</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/8.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>1</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/9.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>0</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/0.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>1</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/11.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>1</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/12.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>2</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/13.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
+          @for (item of gameData?.child; track item.sid) {
+              @if (item.sid >= 1 && item.sid <= 13) {
+                  <div class="casino-card-item">
+                      <div> {{ item.l }} </div>
+                      <div class="card-image">
+                          <img [src]="'https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/' + (item?.b === 0 ? 0 : item.sid) + '.png'">
+                      </div>
+                      <div class="casino-book d-none">0</div>
+                  </div>
+              }
+          }
       </div>
-      <div class="bahar-cards-box text-center suspended">
+      <div class="bahar-cards-box text-center" [ngClass]="{ 'suspended': gameData?.child[14]?.b === 0 }">
         <h5 class="w-100 text-center text-playerb">Bahar</h5>
-        <div class="casino-card-item">
-          <div>1</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/1.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>0</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/0.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>2</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/3.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>0</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/0.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>2</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/5.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>0</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/0.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>0</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/0.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>2</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/8.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>1</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/9.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>0</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/0.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>1</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/11.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>1</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/12.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
-        <div class="casino-card-item">
-          <div>2</div>
-          <div class="card-image">
-            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/13.png">
-          </div>
-          <div class="casino-book d-none">0</div>
-        </div>
+
+          @for (item of gameData?.child; track item.sid) {
+              @if (item.sid >= 21 && item.sid <= 33) {
+                  <div class="casino-card-item">
+                      <div> {{ item.l }} </div>
+                      <div class="card-image">
+                          <img [src]="'https://wver.sprintstaticdata.com/v162/static/front/img/andar-bahar-cards/' + (item?.b === 0 ? 0 : (item.sid - 20)) + '.png'">
+                      </div>
+                      <div class="casino-book d-none">0</div>
+                  </div>
+              }
+          }
       </div>
     </div>
   </div>

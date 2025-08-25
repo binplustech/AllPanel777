@@ -13,7 +13,12 @@ export interface IData {
   gtype: string;
   remark: string;
   grp: number;
+  aall: string;
+  ball: string;
+  ares: string;
+  bres: string;
   sub: ISub[];
+  child: ISub[];
 }
 
 export interface ISub {

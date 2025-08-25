@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { IData } from "../../../models/casino.model";
 
 @Component({
@@ -7,6 +7,15 @@ import { IData } from "../../../models/casino.model";
   templateUrl: './andarbahar.html',
   styleUrl: './andarbahar.css'
 })
-export class Andarbahar {
+export class Andarbahar implements OnChanges {
 	@Input() gameData!: IData | null;
+	public ares: Array<number> = [];
+	public bres: Array<number> = [];
+
+	ngOnChanges(): void {
+		if (this.gameData) {
+			this.ares = this.gameData.ares.split(',').map(Number);
+			this.bres = this.gameData.bres.split(',').map(Number);
+		}
+	}
 }
