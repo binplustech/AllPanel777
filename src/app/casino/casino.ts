@@ -12,28 +12,16 @@ import { CasinoService } from "../services/casino.service";
 
 export class Casino implements OnInit {
 	private readonly casinoService = inject(CasinoService);
-	// @Input() gameName!: string;
-	// @Input() dealerName!: string;
-	// @Input() chips!: number;
-	// @Input() customTemplate!: TemplateRef<any>;
 
 	gameName: string = '';
-	gameActive: boolean = false;
-	activatedGame = [
-		'lucky5',
-		'lucky7',
-		'lucky7eu',
-		'lucky7eu2'
-	];
+	gameData: any;
+	bets: any[] = [];
 
 	constructor(private route: ActivatedRoute) {}
 
 	ngOnInit(): void {
 		this.route.paramMap.subscribe(params => {
 			this.gameName = params.get('gameName') || 'default';
-			if (this.gameName && this.activatedGame.includes(this.gameName)) {
-				this.gameActive = true;
-			}
 			this.loadGameContent(this.gameName);
 		});
 	}
@@ -43,6 +31,10 @@ export class Casino implements OnInit {
 		this.casinoService.getCasinoData(gameName).subscribe({
 			next: (data): void => {
 				console.log('Casino data loaded:', data);
+				if (data.success) {
+					this.gameData = data.data;
+					this.bets = data.data.sub;  // array of bet options
+				}
 			},
 			error: (error): void => {
 				console.error('Error loading casino data:', error);

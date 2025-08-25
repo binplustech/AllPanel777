@@ -7,7 +7,7 @@
               <!---->
               <div class="casino-video-title">
                 <span class="casino-name">{{ gameName }}</span>
-                <div class="casino-video-rid"> Round ID: 106250806012053 </div>
+                <div class="casino-video-rid"> Round ID: {{ gameData.mid }} </div>
               </div>
               <div class="video-box-container">
                 <div class="video-box">
@@ -18,7 +18,7 @@
                 <div class="casino-cards-shuffle">
                   <i class="fas fa-grip-lines-vertical"></i>
                 </div>
-                  @if (gameActive) {
+                  @if (component) {
                       <div class="casino-video-cards-container">
                           <div>
                     <span>
@@ -42,7 +42,7 @@
                     </g>
                   </svg>
                   <span class="base-timer__label red">
-                    <span>10</span>
+                    <span>{{ gameData.lt }}</span>
                   </span>
                 </div>
               </div>
@@ -96,7 +96,7 @@
           <div class="casino-place-bet-title">
             <span>Last Results</span>
           </div>
-          <div class="casino-video-last-results" *ngIf="gameActive">
+          <div class="casino-video-last-results" *ngIf="component">
             <span class="resultlow">L
               <!---->
               <!---->
