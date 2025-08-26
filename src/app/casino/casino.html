@@ -38,13 +38,7 @@
                 </div>
                 <!-- Custom Section (changes per table) -->
                 @if (gameData()) {
-                    @if (CasinoTablesType.lucky7 === currentGameName) {
-                        <app-lucky7 [gameData]="gameData()"></app-lucky7>
-                    } @else if (CasinoTablesType.lucky7eu === currentGameName) {
-                        <app-lucky7 [gameData]="gameData()"></app-lucky7>
-                    } @else if (CasinoTablesType.lucky7eu2 === currentGameName) {
-                        <app-lucky7 [gameData]="gameData()"></app-lucky7>
-                    } @else if (CasinoTablesType.lucky5 === currentGameName) {
+                    @if ([CasinoTablesType.lucky7, CasinoTablesType.lucky5, CasinoTablesType.lucky7eu2, CasinoTablesType.lucky7eu].includes(currentGameName)) {
                         <app-lucky7 [gameData]="gameData()"></app-lucky7>
                     } @else if (CasinoTablesType.lucky15 === currentGameName) {
                         <app-lucky15 [gameData]="gameData()"></app-lucky15>
@@ -97,9 +91,15 @@
                 <div class="casino-video-last-results">
                     @if (casinoResKeys) {
                         @for (item of gameResult()?.data?.res; track item.mid) {
-                            <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
-                            {{ casinoResKeys[item.win] }}
-                        </span>
+                            @if (currentGameName === CasinoTablesType.lucky7 || currentGameName === CasinoTablesType.lucky5 || currentGameName === CasinoTablesType.lucky7eu2 || currentGameName === CasinoTablesType.lucky7eu) {
+                                <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
+                                    {{ casinoResKeys[item.win] }}
+                                </span>
+                            } @else if (currentGameName ) {
+                                <span class="resultb">
+                                    {{ casinoResKeys[item.win] }}
+                                </span>
+                            }
                         }
                     }
                     <!-- <a href="#" class="result-more"> ... </a> -->
