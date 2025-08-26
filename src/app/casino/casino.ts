@@ -67,7 +67,9 @@ export class Casino implements OnInit, OnDestroy {
 	private getTVUrl(gameName: string): void {
 		this.casinoService.getCasinoTVUrl(gameName).subscribe({
 			next: (data: ICasinoTVUrl): void => {
-				this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(data.data.tv_url);
+				if (data.data.tv_url) {
+					this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(data.data.tv_url);
+				}
 			}
 		});
 	}
