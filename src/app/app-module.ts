@@ -1,12 +1,11 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-import {CarouselModule} from 'ngx-owl-carousel-o';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Sport } from './sport/sport';
-import {SlickCarouselModule} from "ngx-slick-carousel";
+import { SlickCarouselModule } from "ngx-slick-carousel";
 import { Dashboard } from './dashboard/dashboard';
 import { VideoComponent } from './video-component/video-component';
 import { Casino } from './casino/casino';
@@ -24,9 +23,6 @@ import { SportRightSidebar } from './sport/sport-right-sidebar/sport-right-sideb
 import { CasinoList } from './pages/owncasino/casino-list/casino-list';
 import { Logo } from './core/logo/logo';
 import { Lucky7 } from './casino/casino-tables/lucky7/lucky7';
-import { Lucky7eu } from './casino/casino-tables/lucky7eu/lucky7eu';
-import { Lucky5 } from './casino/casino-tables/lucky5/lucky5';
-import { Lucky7eu2 } from './casino/casino-tables/lucky7eu2/lucky7eu2';
 import { Lucky15 } from './casino/casino-tables/lucky15/lucky15';
 import { Andarbahar } from './casino/casino-tables/andarbahar/andarbahar';
 import { Andarbahar2 } from './casino/casino-tables/andarbahar2/andarbahar2';
@@ -45,44 +41,41 @@ import { HttpClientModule } from "@angular/common/http";
 import { CardImageUrl } from "./pipes/imageUrl.pipe";
 
 @NgModule({
-  declarations: [
-    App,
-    Sport,
-    Dashboard,
-    VideoComponent,
-    Casino,
-    Header,
-    Footer,
-    Sidebar,
-    Head,
-    Foot,
-    NewsBox,
-    UpcomingFixture,
-    Owncasino,
-    MainWrapper,
-    NotFoundPage,
-    SportRightSidebar,
-    CasinoList,
-    Logo,
-    Lucky7,
-    Lucky7eu,
-    Lucky5,
-    Lucky7eu2,
-    Lucky15,
-    Andarbahar,
-    Andarbahar2,
-    Ab3,
-    Ab4,
-    Card32A,
-    Card32B,
-    Dragontigert20,
-    Dragontigeroneday,
-    Dragontigerliont20,
-    Dragontigert202,
-    Pokeroneday,
-    Pokert20,
-    Poker6player
-  ],
+	declarations: [
+		App,
+		Sport,
+		Dashboard,
+		VideoComponent,
+		Casino,
+		Header,
+		Footer,
+		Sidebar,
+		Head,
+		Foot,
+		NewsBox,
+		UpcomingFixture,
+		Owncasino,
+		MainWrapper,
+		NotFoundPage,
+		SportRightSidebar,
+		CasinoList,
+		Logo,
+		Lucky7,
+		Lucky15,
+		Andarbahar,
+		Andarbahar2,
+		Ab3,
+		Ab4,
+		Card32A,
+		Card32B,
+		Dragontigert20,
+		Dragontigeroneday,
+		Dragontigerliont20,
+		Dragontigert202,
+		Pokeroneday,
+		Pokert20,
+		Poker6player
+	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
@@ -92,9 +85,9 @@ import { CardImageUrl } from "./pipes/imageUrl.pipe";
 		SlickCarouselModule,
 		HttpClientModule
 	],
-  providers: [
-    provideBrowserGlobalErrorListeners()
-  ],
-  bootstrap: [App]
+	providers: [
+		provideBrowserGlobalErrorListeners()
+	],
+	bootstrap: [App]
 })
 export class AppModule { }
