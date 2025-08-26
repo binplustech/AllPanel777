@@ -11,15 +11,15 @@ export class AndarBaharCardLayout implements OnInit {
 	@Input() gameData!: IData | null;
 	slideStore: Array<string> = [];
 	slideConfig = {
-		infinite: true,
+		infinite: false,
 		speed: 4000,
 		slidesToShow: 7,
 		slidesToScroll: 3,
-		autoplay: true,
+		autoplay: false,
 		autoplaySpeed: 0,
 		cssEase: 'linear',
-		arrows: false,
-		dots: false,
+		arrows: true,
+		dots: true,
 		pauseOnHover: false,
 		pauseOnFocus: false,
 		variableWidth: true
