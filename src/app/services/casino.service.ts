@@ -2,17 +2,38 @@ import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ICasino } from "../models/casino.model";
+import { ICasino, ICasinoResult, ICasinoTVUrl } from "../models/casino.model";
+import { CasinoTablesType } from "../casino/casino-tables/table-loader";
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class CasinoService {
-  private readonly baseUrl: string = environment.apiUrl + 'casino/data';
-  private readonly http: HttpClient = inject(HttpClient);
+	private readonly baseUrl: string = environment.apiUrl + 'casino/';
+	private readonly http: HttpClient = inject(HttpClient);
+	public readonly casinoResultKeys: { [key: string]: { [key: string]: string; } } = {
+		[CasinoTablesType.lucky7]: {"0":"T","1":"L","2":"H","3":"7x"},
+		[CasinoTablesType.lucky7eu]: {"0":"T","1":"L","2":"H","3":"7x"},
+		[CasinoTablesType.lucky7eu2]: {"0":"T","1":"L","2":"H","3":"7x"},
+		[CasinoTablesType.lucky5]: {"0":"T","1":"L","2":"H","3":"7x"},
+		[CasinoTablesType.lucky15]: {"0":"T","1":"L","2":"H","3":"7x"}
+	};
 
-  public getCasinoData(type: string): Observable<ICasino> {
-    const params = new HttpParams().set('type', type);
-    return this.http.get<ICasino>(this.baseUrl, { params });
-  }
+	public getCasinoData(type: string): Observable<ICasino> {
+		const url = `${this.baseUrl}data`;
+		const params = new HttpParams().set('type', type);
+		return this.http.get<ICasino>(url, { params });
+	}
+
+	public getCasinoTVUrl(type: string): Observable<ICasinoTVUrl> {
+		const url = `${this.baseUrl}tv_url`;
+		const params = new HttpParams().set('id', type);
+		return this.http.get<ICasinoTVUrl>(url, { params });
+	}
+
+	public getCasinoResult(type: string): Observable<ICasinoResult> {
+		const url = `${this.baseUrl}result`;
+		const params = new HttpParams().set('type', type);
+		return this.http.get<ICasinoResult>(url, { params });
+	}
 }

@@ -42,6 +42,7 @@ import { Pokeroneday } from './casino/casino-tables/pokeroneday/pokeroneday';
 import { Pokert20 } from './casino/casino-tables/pokert20/pokert20';
 import { Poker6player } from './casino/casino-tables/poker6player/poker6player';
 import { HttpClientModule } from "@angular/common/http";
+import { CardImageUrl } from "./pipes/imageUrl.pipe";
 
 @NgModule({
   declarations: [
@@ -82,14 +83,15 @@ import { HttpClientModule } from "@angular/common/http";
     Pokert20,
     Poker6player
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        CarouselModule,
-        SlickCarouselModule,
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		CarouselModule,
+		CardImageUrl,
+		SlickCarouselModule,
 		HttpClientModule
-    ],
+	],
   providers: [
     provideBrowserGlobalErrorListeners()
   ],

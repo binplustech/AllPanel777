@@ -1,3 +1,18 @@
+<div class="casino-video-cards" [ngClass]="{ 'hide-cards': gameData?.card === '1' }">
+    <div class="casino-cards-shuffle">
+        <i class="fas fa-grip-lines-vertical"></i>
+    </div>
+    @if (gameData) {
+        <div class="casino-video-cards-container">
+            <div>
+                <span>
+                  <img [src]="gameData.card | cardImageUrl">
+                </span>
+            </div>
+        </div>
+    }
+</div>
+
 <div class="casino-detail">
     <div class="casino-box low-high-box">
 
@@ -10,12 +25,6 @@
                     </div>
                     <div class="casino-book d-none">0</div>
                 </div>
-            }
-        }
-
-        @for (item of gameData?.sub; track item.sid) {
-            @if (item.sid === 1) {
-
             }
         }
 

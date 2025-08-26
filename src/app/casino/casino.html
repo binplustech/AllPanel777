@@ -1,175 +1,112 @@
 <div class="casino-container-w">
     <div class="casino-center">
         <div class="casino-container">
-          <div class="casino-table lucky7">
-            <div class="casino-video">
-              <div class="casino-video-title">
-                <span class="casino-name">{{ gameName }}</span>
-                <div class="casino-video-rid"> Round ID: {{ gameData()?.mid }} </div>
-              </div>
-              <div class="video-box-container">
-                <div class="video-box">
-                  <iframe src="/mediaplayer/lucky7/f70aedc1-b991-4da1-b8c7-71ebb37f2b59"></iframe>
+            <div class="casino-table lucky7">
+                <div class="casino-video">
+                    <div class="casino-video-title">
+                        <span class="casino-name">{{ gameResult()?.data?.res1?.cname }}</span>
+                        <div class="casino-video-rid"> Round ID: {{ gameData()?.mid }} </div>
+                    </div>
+                    <div class="video-box-container">
+                        <div class="video-box">
+                            <iframe [src]="safeUrl"></iframe>
+                        </div>
+                    </div>
+                    <div class="casino-timer d-none-small">
+                        <div class="base-timer">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="base-timer__svg">
+                                <g class="base-timer__circle">
+                                    <circle cx="50" cy="50" r="45" class="base-timer__path-elapsed"></circle>
+                                    <path stroke-dasharray="-14 283" d="M 50, 50 m -45, 0 a 45,45 0 1,0 90,0 a 45,45 0 1,0 -90,0" class="base-timer__path-remaining red"></path>
+                                </g>
+                            </svg>
+                            <span class="base-timer__label red">
+                                <span>{{ gameData()?.lt }}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="casino-video-right-icons">
+                        <div title="Home" class="casino-video-home-icon">
+                            <a href="/owncasino">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </div>
+                        <div title="Rules" class="casino-video-rules-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="casino-video-cards ">
-                <div class="casino-cards-shuffle">
-                  <i class="fas fa-grip-lines-vertical"></i>
-                </div>
-                  @if (gameData()) {
-                      <div class="casino-video-cards-container">
-                          <div>
-                    <span>
-                      <img src="https://wver.sprintstaticdata.com/v156/static/front/img/cards/4DD.png">
-                    </span>
-                          </div>
-                      </div>
-                  }
-              </div>
-              <div class="casino-timer d-none-small">
-                <div class="base-timer">
-                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="base-timer__svg">
-                    <g class="base-timer__circle">
-                      <circle cx="50" cy="50" r="45" class="base-timer__path-elapsed"></circle>
-                      <path stroke-dasharray="-14 283" d="
-        M 50, 50
-        m -45, 0
-        a 45,45 0 1,0 90,0
-        a 45,45 0 1,0 -90,0
-      " class="base-timer__path-remaining red"></path>
-                    </g>
-                  </svg>
-                  <span class="base-timer__label red">
-                    <span>{{ gameData()?.lt }}</span>
-                  </span>
-                </div>
-              </div>
-              <div class="casino-video-right-icons">
-                <div title="Home" class="casino-video-home-icon">
-                  <a href="/owncasino">
-                    <i class="fas fa-home"></i>
-                  </a>
-                </div>
-                <div title="Rules" class="casino-video-rules-icon">
-                  <i class="fas fa-info-circle"></i>
-                </div>
-                <!---->
-              </div>
-              <!---->
+                <!-- Custom Section (changes per table) -->
+                @if (gameData()) {
+                    @if (CasinoTablesType.lucky7 === currentGameName) {
+                        <app-lucky7 [gameData]="gameData()"></app-lucky7>
+                    } @else if (CasinoTablesType.lucky7eu === currentGameName) {
+                        <app-lucky7 [gameData]="gameData()"></app-lucky7>
+                    } @else if (CasinoTablesType.lucky7eu2 === currentGameName) {
+                        <app-lucky7 [gameData]="gameData()"></app-lucky7>
+                    } @else if (CasinoTablesType.lucky5 === currentGameName) {
+                        <app-lucky7 [gameData]="gameData()"></app-lucky7>
+                    } @else if (CasinoTablesType.lucky15 === currentGameName) {
+                        <app-lucky15 [gameData]="gameData()"></app-lucky15>
+                    } @else if (CasinoTablesType.ab3 === currentGameName) {
+                        <app-ab3 [gameData]="gameData()"></app-ab3>
+                    } @else if (CasinoTablesType.ab4 === currentGameName) {
+                        <app-ab3 [gameData]="gameData()"></app-ab3>
+                    } @else if (CasinoTablesType.andarbahar  === currentGameName) {
+                        <app-andarbahar [gameData]="gameData()"></app-andarbahar>
+                    } @else if (CasinoTablesType.andarbahar2  === currentGameName) {
+                        <app-andarbahar2 [gameData]="gameData()"></app-andarbahar2>
+                    } @else if (CasinoTablesType["Card32-A"] === currentGameName) {
+                        <app-card32-a [gameData]="gameData()"></app-card32-a>
+                    } @else if (CasinoTablesType["Card32-B"] === currentGameName) {
+                        <app-card32-b [gameData]="gameData()"></app-card32-b>
+                    } @else if (CasinoTablesType.dragontigerliont20 === currentGameName) {
+                        <app-dragontigerliont20 [gameData]="gameData()"></app-dragontigerliont20>
+                    } @else if (CasinoTablesType.dragontigeroneday === currentGameName) {
+                        <app-dragontigeroneday [gameData]="gameData()"></app-dragontigeroneday>
+                    } @else if (CasinoTablesType.dragontigert20 === currentGameName) {
+                        <app-dragontigert20 [gameData]="gameData()"></app-dragontigert20>
+                    } @else if (CasinoTablesType.dragontigert202 === currentGameName) {
+                        <app-dragontigert202 [gameData]="gameData()"></app-dragontigert202>
+                    } @else if (CasinoTablesType.poker6player === currentGameName) {
+                        <app-poker6player [gameData]="gameData()"></app-poker6player>
+                    } @else if (CasinoTablesType.pokeroneday === currentGameName) {
+                        <app-pokeroneday [gameData]="gameData()"></app-pokeroneday>
+                    } @else if (CasinoTablesType.pokert20 === currentGameName) {
+                        <app-pokert20 [gameData]="gameData()"></app-pokert20>
+                    } @else {
+                        <div class="casino-detail">
+                            <div class="casino-box low-high-box">
+                                COMING SOON
+                            </div>
+                        </div>
+                    }
+                }
             </div>
-            <!-- Custom Section (changes per table) -->
-              @if (gameData()) {
-                  @if (CasinoTablesType.lucky7 === currentGameName) {
-                      <app-lucky7 [gameData]="gameData()"></app-lucky7>
-                  } @else if (CasinoTablesType.lucky7eu === currentGameName) {
-                      <app-lucky7 [gameData]="gameData()"></app-lucky7>
-                  } @else if (CasinoTablesType.lucky7eu2 === currentGameName) {
-                      <app-lucky7 [gameData]="gameData()"></app-lucky7>
-                  } @else if (CasinoTablesType.lucky5 === currentGameName) {
-                      <app-lucky7 [gameData]="gameData()"></app-lucky7>
-                  } @else if (CasinoTablesType.lucky15 === currentGameName) {
-                      <app-lucky15 [gameData]="gameData()"></app-lucky15>
-                  } @else if (CasinoTablesType.ab3 === currentGameName) {
-                      <app-ab3 [gameData]="gameData()"></app-ab3>
-                  } @else if (CasinoTablesType.ab4 === currentGameName) {
-                      <app-ab3 [gameData]="gameData()"></app-ab3>
-                  } @else if (CasinoTablesType.andarbahar  === currentGameName) {
-                      <app-andarbahar [gameData]="gameData()"></app-andarbahar>
-                  } @else if (CasinoTablesType.andarbahar2  === currentGameName) {
-                      <app-andarbahar2 [gameData]="gameData()"></app-andarbahar2>
-                  } @else if (CasinoTablesType["Card32-A"] === currentGameName) {
-                      <app-card32-a [gameData]="gameData()"></app-card32-a>
-                  } @else if (CasinoTablesType["Card32-B"] === currentGameName) {
-                      <app-card32-b [gameData]="gameData()"></app-card32-b>
-                  } @else if (CasinoTablesType.dragontigerliont20 === currentGameName) {
-                      <app-dragontigerliont20 [gameData]="gameData()"></app-dragontigerliont20>
-                  } @else if (CasinoTablesType.dragontigeroneday === currentGameName) {
-                      <app-dragontigeroneday [gameData]="gameData()"></app-dragontigeroneday>
-                  } @else if (CasinoTablesType.dragontigert20 === currentGameName) {
-                      <app-dragontigert20 [gameData]="gameData()"></app-dragontigert20>
-                  } @else if (CasinoTablesType.dragontigert202 === currentGameName) {
-                      <app-dragontigert202 [gameData]="gameData()"></app-dragontigert202>
-                  } @else if (CasinoTablesType.poker6player === currentGameName) {
-                      <app-poker6player [gameData]="gameData()"></app-poker6player>
-                  } @else if (CasinoTablesType.pokeroneday === currentGameName) {
-                      <app-pokeroneday [gameData]="gameData()"></app-pokeroneday>
-                  } @else if (CasinoTablesType.pokert20 === currentGameName) {
-                      <app-pokert20 [gameData]="gameData()"></app-pokert20>
-                  } @else {
-                      <div class="casino-detail">
-                          <div class="casino-box low-high-box">
-                              COMING SOON
-                          </div>
-                      </div>
-                  }
-              }
-            <!-- <ng-container *ngTemplateOutlet="customTemplate;"></ng-container> -->
-            <!---->
-          </div>
-          <!---->
-          <!---->
-          <!---->
         </div>
-        <!---->
         <app-footer></app-footer>
-      </div>
-      <div id="right-sidebar-id" class="right-sidebar casino-right-sidebar teen2sidebar">
-        <!---->
-        <!---->
-        <!---->
+    </div>
+    <div id="right-sidebar-id" class="right-sidebar casino-right-sidebar teen2sidebar">
         <span>
         </span>
         <div class="casino-place-bet">
-          <div class="casino-place-bet-title">
-            <span>Last Results</span>
-          </div>
+            <div class="casino-place-bet-title">
+                <span>Last Results</span>
+            </div>
             @if (gameData()) {
                 <div class="casino-video-last-results">
-            <span class="resultlow">L
-                <!---->
-                <!---->
-            </span>
-                    <span class="resulthigh">
-              <!----> H
-                        <!---->
-            </span>
-                    <span class="resultlow">L
-                        <!---->
-                        <!---->
-            </span>
-                    <span class="resulthigh">
-              <!----> H
-                        <!---->
-            </span>
-                    <span class="resulthigh">
-              <!----> H
-                        <!---->
-            </span>
-                    <span class="resultlow">L
-                        <!---->
-                        <!---->
-            </span>
-                    <span class="resulttie">
-              <!---->
-                        <!----> T
-            </span>
-                    <span class="resultlow">L
-                        <!---->
-                        <!---->
-            </span>
-                    <span class="resulthigh">
-              <!----> H
-                        <!---->
-            </span>
-                    <span class="resultlow">L
-                        <!---->
-                        <!---->
-            </span>
+                    @if (casinoResKeys) {
+                        @for (item of gameResult()?.data?.res; track item.mid) {
+                            <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
+                            {{ casinoResKeys[item.win] }}
+                        </span>
+                        }
+                    }
                     <!-- <a href="#" class="result-more"> ... </a> -->
                     <!---->
                 </div>
             }
         </div>
         <span></span>
-      </div>
+    </div>
 </div>
