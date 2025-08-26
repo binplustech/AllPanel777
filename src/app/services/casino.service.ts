@@ -38,7 +38,7 @@ export class CasinoService {
 		dt202: 'dt20',
 		poker: 'poker1day',
 		poker20: 'poker20',
-		poker6: 'poker6playe',
+		poker6: 'poker6player',
 		cards32: 'cards32a',
 		cards32eu: 'cards32b'
 	};
