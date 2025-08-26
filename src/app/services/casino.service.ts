@@ -19,6 +19,28 @@ export class CasinoService {
 		[CasinoTablesType.lucky15]: {"0":"T","1":"L","2":"H","3":"7x"}
 	};
 
+	public readonly classesByGameType: { [key: string]: string } = {
+		default: 'lucky7',
+		lucky7: 'lucky7',
+		lucky5: 'lucky7',
+		lucky7eu: 'lucky7 lucky7eu',
+		lucky7eu2: 'lucky7 lucky7eu lucky7eu2',
+		lucky15: 'ball-by-ball',
+		ab20: 'andar-bahar',
+		abj: 'andar-bahar2',
+		ab3: 'andar-bahar andar-bahar-3',
+		ab4: 'andar-bahar andar-bahar-3 andar-bahar-4',
+		dt6: 'dt1day',
+		dt20: 'dt20',
+		dtl20: 'dtl20',
+		dt202: 'dt20',
+		poker: 'poker1day',
+		poker20: 'poker20',
+		poker6: 'poker6playe',
+		cards32: 'cards32a',
+		cards32eu: 'cards32b'
+	};
+
 	public getCasinoData(type: string): Observable<ICasino> {
 		const url = `${this.baseUrl}data`;
 		const params = new HttpParams().set('type', type);

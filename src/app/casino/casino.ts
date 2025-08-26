@@ -13,7 +13,7 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 })
 
 export class Casino implements OnInit, OnDestroy {
-	private readonly casinoService = inject(CasinoService);
+	public readonly casinoService = inject(CasinoService);
 	private readonly route = inject(ActivatedRoute);
 	private readonly sanitizer: DomSanitizer = inject(DomSanitizer);
 	private intervalId: number | null = null;
@@ -32,10 +32,10 @@ export class Casino implements OnInit, OnDestroy {
 		this.route.paramMap.subscribe(params => {
 			this.gameName = params.get('gameName') || 'default';
 			this.currentGameName = CasinoTablesType[this.gameName as keyof typeof CasinoTablesType];
-			this.loadGameContent(CasinoTablesType[this.gameName as keyof typeof CasinoTablesType] || 'default');
-			this.getTVUrl(CasinoTablesType[this.gameName as keyof typeof CasinoTablesType]);
-			this.getCasinoResult(CasinoTablesType[this.gameName as keyof typeof CasinoTablesType]);
-			this.casinoResKeys = this.casinoService.casinoResultKeys[CasinoTablesType[this.gameName as keyof typeof CasinoTablesType]];
+			this.loadGameContent(this.currentGameName || 'default');
+			this.getTVUrl(this.currentGameName);
+			this.getCasinoResult(this.currentGameName);
+			this.casinoResKeys = this.casinoService.casinoResultKeys[this.currentGameName];
 		});
 	}
 

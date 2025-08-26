@@ -1,7 +1,7 @@
 <div class="casino-container-w">
     <div class="casino-center">
         <div class="casino-container">
-            <div class="casino-table lucky7">
+            <div class="casino-table" [ngClass]="casinoService.classesByGameType[currentGameName]">
                 <div class="casino-video">
                     <div class="casino-video-title">
                         <span class="casino-name">{{ gameResult()?.data?.res1?.cname }}</span>

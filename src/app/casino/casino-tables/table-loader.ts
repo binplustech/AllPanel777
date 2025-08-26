@@ -40,11 +40,11 @@
 // };
 
 export enum CasinoTablesType {
-	lucky5= 'Lucky5',
-	lucky7= 'Lucky7',
-	lucky7eu= 'Lucky7eu',
-	lucky7eu2= 'Lucky7eu2',
-	lucky15= 'Lucky15',
+	lucky5= 'lucky5',
+	lucky7= 'lucky7',
+	lucky7eu= 'lucky7eu',
+	lucky7eu2= 'lucky7eu2',
+	lucky15= 'lucky15',
 	andarbahar= 'ab20',
 	andarbahar2= 'abj',
 	ab3= 'Ab3',
