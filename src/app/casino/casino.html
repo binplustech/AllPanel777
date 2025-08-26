@@ -90,8 +90,7 @@
                     }
                 }
                 <div class="casino-video-last-results d-none-big">
-                    <span class="resulthigh">H</span>
-                    <span class="resultlow">L</span>
+                    <ng-container *ngTemplateOutlet="finalResult"></ng-container>
                     <a href="#" class="result-more"> ... </a>
                 </div>
             </div>
@@ -107,23 +106,7 @@
             </div>
             @if (gameData()) {
                 <div class="casino-video-last-results">
-                    @if (casinoResKeys) {
-                        @for (item of gameResult()?.data?.res; track item.mid) {
-                            @if (currentGameName === CasinoTablesType.lucky7 || currentGameName === CasinoTablesType.lucky5 || currentGameName === CasinoTablesType.lucky7eu2 || currentGameName === CasinoTablesType.lucky7eu) {
-                                <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
-                                    {{ casinoResKeys[item.win] }}
-                                </span>
-                            } @else if ([CasinoTablesType.ab3].includes(currentGameName) ) {
-                                <span class="resultb">
-                                    {{ casinoResKeys[item.win] }}
-                                </span>
-                            } @else {
-                                <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
-                                    {{ casinoResKeys[item.win] }}
-                                </span>
-                            }
-                        }
-                    }
+                    <ng-container *ngTemplateOutlet="finalResult"></ng-container>
                     <!-- <a href="#" class="result-more"> ... </a> -->
                 </div>
             }
@@ -131,3 +114,23 @@
         <span></span>
     </div>
 </div>
+
+<ng-template #finalResult>
+    @if (casinoResKeys) {
+        @for (item of gameResult()?.data?.res; track item.mid) {
+            @if (currentGameName === CasinoTablesType.lucky7 || currentGameName === CasinoTablesType.lucky5 || currentGameName === CasinoTablesType.lucky7eu2 || currentGameName === CasinoTablesType.lucky7eu) {
+                <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
+                                    {{ casinoResKeys[item.win] }}
+                                </span>
+            } @else if ([CasinoTablesType.ab3].includes(currentGameName) ) {
+                <span class="resultb">
+                                    {{ casinoResKeys[item.win] }}
+                                </span>
+            } @else {
+                <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
+                                    {{ casinoResKeys[item.win] }}
+                                </span>
+            }
+        }
+    }
+</ng-template>
