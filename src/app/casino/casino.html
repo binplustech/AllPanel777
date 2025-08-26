@@ -12,12 +12,6 @@
                             <iframe [src]="safeUrl"></iframe>
                         </div>
                     </div>
-                    @if ([CasinoTablesType.ab3, CasinoTablesType.ab4].includes(currentGameName)) {
-                        <div class="casino-video-cards d-none-small">
-                            <app-andar-bahar-card-layout></app-andar-bahar-card-layout>
-                        </div>
-                    }
-
                     <div class="casino-timer d-none-small">
                         <div class="base-timer">
                             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="base-timer__svg">
@@ -40,6 +34,7 @@
                     </div>
                     <div class="casino-video-right-icons">
                         <div title="Home" class="casino-video-home-icon">
+
                             <a href="/owncasino">
                                 <i class="fas fa-home"></i>
                             </a>
@@ -60,7 +55,7 @@
                     } @else if (CasinoTablesType.ab4 === currentGameName) {
                         <app-ab3 [gameData]="gameData()"></app-ab3>
                     } @else if (CasinoTablesType.andarbahar  === currentGameName) {
-                        <app-andarbahar [gameData]="gameData()"></app-andarbahar>
+                        <app-ab3 [gameData]="gameData()"></app-ab3>
                     } @else if (CasinoTablesType.andarbahar2  === currentGameName) {
                         <app-andarbahar2 [gameData]="gameData()"></app-andarbahar2>
                     } @else if (CasinoTablesType["Card32-A"] === currentGameName) {
