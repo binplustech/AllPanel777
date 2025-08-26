@@ -55,7 +55,7 @@ export class Casino implements OnInit, OnDestroy {
 					}
 					this.gameData.set(data.data);
 					this.bets = data.data.sub;
-					// this.startInterval();
+					this.startInterval();
 				}
 			},
 			error: (): void => {

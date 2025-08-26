@@ -12,15 +12,28 @@
                             <iframe [src]="safeUrl"></iframe>
                         </div>
                     </div>
+                    @if ([CasinoTablesType.ab3, CasinoTablesType.ab4].includes(currentGameName)) {
+                        <div class="casino-video-cards d-none-small">
+                            <app-andar-bahar-card-layout></app-andar-bahar-card-layout>
+                        </div>
+                    }
+
                     <div class="casino-timer d-none-small">
                         <div class="base-timer">
                             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="base-timer__svg">
                                 <g class="base-timer__circle">
                                     <circle cx="50" cy="50" r="45" class="base-timer__path-elapsed"></circle>
-                                    <path stroke-dasharray="-14 283" d="M 50, 50 m -45, 0 a 45,45 0 1,0 90,0 a 45,45 0 1,0 -90,0" class="base-timer__path-remaining red"></path>
+                                    <path
+                                            stroke-dasharray="-14 283" d="M 50, 50 m -45, 0 a 45,45 0 1,0 90,0 a 45,45 0 1,0 -90,0"
+                                            class="base-timer__path-remaining"
+                                            [ngClass]="{ 'red': gameData()?.lt <= 3, 'green': gameData()?.lt >= 7, 'orange': gameData()?.lt >= 4 && gameData()?.lt <= 6 }"
+                                    ></path>
                                 </g>
                             </svg>
-                            <span class="base-timer__label red">
+                            <span
+                                    class="base-timer__label"
+                                    [ngClass]="{ 'red': gameData()?.lt <= 3, 'green': gameData()?.lt >= 7, 'orange': gameData()?.lt >= 4 && gameData()?.lt <= 6 }"
+                            >
                                 <span>{{ gameData()?.lt }}</span>
                             </span>
                         </div>
@@ -95,8 +108,12 @@
                                 <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
                                     {{ casinoResKeys[item.win] }}
                                 </span>
-                            } @else if (currentGameName ) {
+                            } @else if ([CasinoTablesType.ab3].includes(currentGameName) ) {
                                 <span class="resultb">
+                                    {{ casinoResKeys[item.win] }}
+                                </span>
+                            } @else {
+                                <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
                                     {{ casinoResKeys[item.win] }}
                                 </span>
                             }

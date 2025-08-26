@@ -39,6 +39,7 @@ import { Pokert20 } from './casino/casino-tables/pokert20/pokert20';
 import { Poker6player } from './casino/casino-tables/poker6player/poker6player';
 import { HttpClientModule } from "@angular/common/http";
 import { CardImageUrl } from "./pipes/imageUrl.pipe";
+import { AndarBaharCardLayout } from './cards/andar-bahar-card-layout/andar-bahar-card-layout';
 
 @NgModule({
 	declarations: [
@@ -74,7 +75,8 @@ import { CardImageUrl } from "./pipes/imageUrl.pipe";
 		Dragontigert202,
 		Pokeroneday,
 		Pokert20,
-		Poker6player
+		Poker6player,
+  AndarBaharCardLayout
 	],
 	imports: [
 		BrowserModule,

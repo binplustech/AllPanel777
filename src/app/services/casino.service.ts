@@ -17,6 +17,8 @@ export class CasinoService {
 		[CasinoTablesType.lucky7eu2]: {"0":"T","1":"L","2":"H","3":"7x"},
 		[CasinoTablesType.lucky5]: {"0":"T","1":"L","2":"H","3":"7x"},
 		[CasinoTablesType.lucky15]: {"0":"0","1":"0","2":"1","3":"2", "4": '4', "5": '6', "6": 'W'},
+		[CasinoTablesType.ab3]: {"0":"R"},
+		[CasinoTablesType.ab4]: {"0":"R"},
 	};
 
 	public readonly classesByGameType: { [key: string]: string } = {
