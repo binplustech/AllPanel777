@@ -69,7 +69,7 @@
                     } @else if (CasinoTablesType.dragontigert20 === currentGameName) {
                         <app-dragontigert20 [gameData]="gameData()"></app-dragontigert20>
                     } @else if (CasinoTablesType.dragontigert202 === currentGameName) {
-                        <app-dragontigert202 [gameData]="gameData()"></app-dragontigert202>
+                        <app-dragontigert20 [gameData]="gameData()"></app-dragontigert20>
                     } @else if (CasinoTablesType.poker6player === currentGameName) {
                         <app-poker6player [gameData]="gameData()"></app-poker6player>
                     } @else if (CasinoTablesType.pokeroneday === currentGameName) {
@@ -113,18 +113,36 @@
 <ng-template #finalResult>
     @if (casinoResKeys) {
         @for (item of gameResult()?.data?.res; track item.mid) {
-            @if (currentGameName === CasinoTablesType.lucky7 || currentGameName === CasinoTablesType.lucky5 || currentGameName === CasinoTablesType.lucky7eu2 || currentGameName === CasinoTablesType.lucky7eu) {
+            @if ([CasinoTablesType.lucky7, CasinoTablesType.lucky5, CasinoTablesType.lucky7eu2 , CasinoTablesType.lucky7eu].includes(currentGameName)) {
                 <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
-                                    {{ casinoResKeys[item.win] }}
-                                </span>
+                    {{ casinoResKeys[item.win] }}
+                </span>
             } @else if ([CasinoTablesType.ab3].includes(currentGameName) ) {
                 <span class="resultb">
-                                    {{ casinoResKeys[item.win] }}
-                                </span>
+                    {{ casinoResKeys[item.win] }}
+                </span>
+            } @else if ([CasinoTablesType.dragontigert20, CasinoTablesType.dragontigeroneday, CasinoTablesType.dragontigert202, CasinoTablesType.dragontigerliont20].includes(currentGameName) ) {
+                @if (casinoResKeys[item.win] === 'T') {
+                    <span class="resultb">
+                        {{ casinoResKeys[item.win] }}
+                    </span>
+                }
+
+                @if (casinoResKeys[item.win] === 'L') {
+                    <span class="resultc">
+                        {{ casinoResKeys[item.win] }}
+                    </span>
+                }
+
+                @if (casinoResKeys[item.win] === 'D') {
+                    <span class="resulta">
+                        {{ casinoResKeys[item.win] }}
+                    </span>
+                }
             } @else {
                 <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
-                                    {{ casinoResKeys[item.win] }}
-                                </span>
+                    {{ casinoResKeys[item.win] }}
+                </span>
             }
         }
     }

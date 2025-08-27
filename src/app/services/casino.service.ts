@@ -9,7 +9,8 @@ import { CasinoTablesType } from "../casino/casino-tables/table-loader";
 	providedIn: 'root'
 })
 export class CasinoService {
-	private readonly baseUrl: string = environment.apiUrl + 'casino/';
+	// private readonly baseUrl: string = environment.apiUrl + 'casino/';
+	private readonly baseUrl: string = environment.apiUrl;
 	private readonly http: HttpClient = inject(HttpClient);
 	public readonly casinoResultKeys: { [key: string]: { [key: string]: string; } } = {
 		[CasinoTablesType.lucky7]: {"0":"T","1":"L","2":"H","3":"7x"},
@@ -19,6 +20,10 @@ export class CasinoService {
 		[CasinoTablesType.lucky15]: {"0":"0","1":"0","2":"1","3":"2", "4": '4', "5": '6', "6": 'W'},
 		[CasinoTablesType.ab3]: {"0":"R"},
 		[CasinoTablesType.ab4]: {"0":"R"},
+		[CasinoTablesType.dragontigert20]: { '2': 'T', '1': 'D' },
+		[CasinoTablesType.dragontigeroneday]: { '0': 'T', '1': 'D' },
+		[CasinoTablesType.dragontigert202]: { '2': 'T', '1': 'D' },
+		[CasinoTablesType.dragontigerliont20]: { '0': 'T', '1': 'D', '2': 'L' },
 	};
 
 	public readonly classesByGameType: { [key: string]: string } = {
@@ -44,9 +49,10 @@ export class CasinoService {
 	};
 
 	public getCasinoData(type: string): Observable<ICasino> {
-		const url = `${this.baseUrl}data`;
-		const params = new HttpParams().set('type', type);
-		return this.http.get<ICasino>(url, { params });
+		// const url = `${this.baseUrl}data`;
+		const url = `${this.baseUrl}getdata/${type}`;
+		// const params = new HttpParams().set('type', type);
+		return this.http.get<ICasino>(url);
 	}
 
 	public getCasinoTVUrl(type: string): Observable<ICasinoTVUrl> {
@@ -56,8 +62,9 @@ export class CasinoService {
 	}
 
 	public getCasinoResult(type: string): Observable<ICasinoResult> {
-		const url = `${this.baseUrl}result`;
-		const params = new HttpParams().set('type', type);
-		return this.http.get<ICasinoResult>(url, { params });
+		// const url = `${this.baseUrl}result`;
+		const url = `${this.baseUrl}getresult/${type}`;
+		// const params = new HttpParams().set('type', type);
+		return this.http.get<ICasinoResult>(url);
 	}
 }

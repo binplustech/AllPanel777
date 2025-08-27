@@ -1,264 +1,365 @@
 <div class="casino-detail">
-  <div class="dt1dayfancy">
-    <div class="casino-box-row dragonfancy">
-      <div class="casino-nation-name">
-        <b>Dragon</b>
-      </div>
-      <div class="casino-bl-box">
-        <div class="back casino-bl-box-item">
-          <span class="casino-box-odd">1.98</span>
+    <div class="dt1dayfancy">
+        <div class="casino-box-row dragonfancy">
+            <div class="casino-nation-name">
+                <b>Dragon</b>
+            </div>
+            @for (item of gameData?.sub; track item.sid) {
+                @if (item.nat === 'Dragon') {
+                    <div class="casino-bl-box">
+                        <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                            <span class="casino-box-odd"> {{ item.b }} </span>
+                        </div>
+                        <div class="lay casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                            <span class="casino-box-odd"> {{ item.l }} </span>
+                        </div>
+                    </div>
+                }
+            }
+
+
+            <div class="casino-nation-name text-center w-100">
+                <span class="d-none"></span>
+            </div>
         </div>
-        <div class="lay casino-bl-box-item">
-          <span class="casino-box-odd">0</span>
+
+        <div class="casino-box-row pairfancy">
+            <div class="casino-nation-name">
+                <b>Pair</b>
+            </div>
+            @for (item of gameData?.sub; track item.sid) {
+                @if (item.nat === 'Pair') {
+                    <div class="casino-bl-box">
+                        <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                            <span class="casino-box-odd"> {{ item .b }} </span>
+                        </div>
+                    </div>
+                }
+            }
+
+            <div class="casino-nation-name text-center w-100">
+                <span class="d-none">0</span>
+            </div>
         </div>
-      </div>
-      <div class="casino-nation-name text-center w-100">
-        <span class="d-none"></span>
-      </div>
+
+        <div class="casino-box-row tigerfancy">
+            <div class="casino-nation-name">
+                <b>Tiger</b>
+            </div>
+            @for (item of gameData?.sub; track item.sid) {
+                @if (item.nat === 'Tiger') {
+                    <div class="casino-bl-box">
+                        <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                            <span class="casino-box-odd"> {{ item.b }} </span>
+                        </div>
+                        <div class="lay casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                            <span class="casino-box-odd"> {{ item.l }} </span>
+                        </div>
+                    </div>
+                }
+            }
+            <div class="casino-nation-name text-center w-100">
+                <span class="d-none"></span>
+            </div>
+        </div>
+
     </div>
-    <div class="casino-box-row pairfancy">
-      <div class="casino-nation-name">
-        <b>Pair</b>
-      </div>
-      <div class="casino-bl-box">
-        <div class="back casino-bl-box-item">
-          <span class="casino-box-odd">12</span>
+    <div class="teen1daycasino-container mt-2">
+        <div class="teen1dayleft">
+            <div>
+                <div class="casino-box-row casino-odds">
+                    <div class="text-left w-100">
+                        <b class="text-playera">Dragon</b>
+                    </div>
+                </div>
+                <div class="casino-box-row">
+                    @for (item of gameData?.sub; track item.sid) {
+                        @if (item.nat === 'Dragon Even') {
+                            <div class="casino-bl-box">
+                                <b> {{ item.b }} </b>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Odd') {
+                            <div class="casino-bl-box">
+                                <b> {{ item.b }} </b>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Black') {
+                            <div class="casino-bl-box">
+                                <b> {{ item.b }} </b>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Red') {
+                            <div class="casino-bl-box">
+                                <b> {{ item.b }} </b>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class="casino-box-row">
+                    @for (item of gameData?.sub; track item.sid) {
+                        @if (item.nat === 'Dragon Even') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd">Even</span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Odd') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd">Odd</span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Black') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item casino-card-img" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                  <span>
+                                    <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/spade.png">
+                                    <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/club.png">
+                                  </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Red') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item casino-card-img" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                  <span>
+                                    <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/heart.png">
+                                    <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/diamond.png">
+                                  </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <div class="casino-box-row">
+                    <div class="casino-bl-box">
+                        <div class="casino-bl-box-item casino-card-img">
+                            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/spade.png">
+                        </div>
+                    </div>
+
+                    <div class="casino-bl-box">
+                        <div class="casino-bl-box-item casino-card-img">
+                            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/heart.png">
+                        </div>
+                    </div>
+
+                    <div class="casino-bl-box">
+                        <div class="casino-bl-box-item casino-card-img">
+                            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/club.png">
+                        </div>
+                    </div>
+
+                    <div class="casino-bl-box">
+                        <div class="casino-bl-box-item casino-card-img">
+                            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/diamond.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="casino-box-row">
+                    @for (item of gameData?.sub; track item.sid) {
+
+                        @if (item.nat === 'Dragon Spade') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd"> {{ item.b }} </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Heart') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd"> {{ item.b }} </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Club') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd"> {{ item.b }} </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Diamond') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd"> {{ item.b }} </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
         </div>
-      </div>
-      <div class="casino-nation-name text-center w-100">
-        <span class="d-none">0</span>
-      </div>
+        <div class="teen1daycenter"></div>
+        <div class="teen1dayright">
+            <div>
+                <div class="casino-box-row casino-odds">
+                    <div class="text-left w-100">
+                        <b class="text-playerb">Tiger</b>
+                    </div>
+                </div>
+                <div class="casino-box-row">
+                    @for (item of gameData?.sub; track item.sid) {
+                        @if (item.nat === 'Tiger Even') {
+                            <div class="casino-bl-box">
+                                <b> {{ item.b }} </b>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Tiger Odd') {
+                            <div class="casino-bl-box">
+                                <b> {{ item.b }} </b>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Tiger Black') {
+                            <div class="casino-bl-box">
+                                <b> {{ item.b }} </b>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Tiger Red') {
+                            <div class="casino-bl-box">
+                                <b> {{ item.b }} </b>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class="casino-box-row">
+                    @for (item of gameData?.sub; track item.sid) {
+
+                        @if (item.nat === 'Tiger Even') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd">Even</span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Tiger Odd') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd">Odd</span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Tiger Black') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item casino-card-img" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                              <span>
+                                <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/spade.png">
+                                <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/club.png">
+                              </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Tiger Red') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item casino-card-img" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                  <span>
+                                    <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/heart.png">
+                                    <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/diamond.png">
+                                  </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="mt-3">
+                <div class="casino-box-row">
+                    <div class="casino-bl-box">
+                        <div class="casino-bl-box-item casino-card-img">
+                            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/spade.png">
+                        </div>
+                    </div>
+                    <div class="casino-bl-box">
+                        <div class="casino-bl-box-item casino-card-img">
+                            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/heart.png">
+                        </div>
+                    </div>
+                    <div class="casino-bl-box">
+                        <div class="casino-bl-box-item casino-card-img">
+                            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/club.png">
+                        </div>
+                    </div>
+                    <div class="casino-bl-box">
+                        <div class="casino-bl-box-item casino-card-img">
+                            <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/diamond.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="casino-box-row">
+                    @for (item of gameData?.sub; track item.sid) {
+                        @if (item.nat === 'Dragon Spade') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd"> {{ item.b }} </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Heart') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd"> {{ item.b }} </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Club') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd"> {{ item.b }} </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (item.nat === 'Dragon Diamond') {
+                            <div class="casino-bl-box">
+                                <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': item.gstatus === 'SUSPENDED' }">
+                                    <span class="casino-box-odd"> {{ item.b }} </span>
+                                    <span class="d-none">0</span>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="casino-box-row tigerfancy">
-      <div class="casino-nation-name">
-        <b>Tiger</b>
-      </div>
-      <div class="casino-bl-box">
-        <div class="back casino-bl-box-item">
-          <span class="casino-box-odd">1.98</span>
-        </div>
-        <div class="lay casino-bl-box-item">
-          <span class="casino-box-odd">0</span>
-        </div>
-      </div>
-      <div class="casino-nation-name text-center w-100">
-        <span class="d-none"></span>
-      </div>
-    </div>
-  </div>
-  <div class="teen1daycasino-container mt-2">
-    <div class="teen1dayleft">
-      <div>
-        <div class="casino-box-row casino-odds">
-          <div class="text-left w-100">
-            <b class="text-playera">Dragon</b>
-          </div>
-        </div>
-        <div class="casino-box-row">
-          <div class="casino-bl-box">
-            <b>2.1</b>
-          </div>
-          <div class="casino-bl-box">
-            <b>1.79</b>
-          </div>
-          <div class="casino-bl-box">
-            <b>1.95</b>
-          </div>
-          <div class="casino-bl-box">
-            <b>1.95</b>
-          </div>
-        </div>
-        <div class="casino-box-row">
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">Even</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">Odd</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item casino-card-img">
-              <span>
-                <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/spade.png">
-                <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/club.png">
-              </span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item casino-card-img">
-              <span>
-                <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/heart.png">
-                <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/diamond.png">
-              </span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mt-3">
-        <div class="casino-box-row">
-          <div class="casino-bl-box">
-            <div class="casino-bl-box-item casino-card-img">
-              <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/spade.png">
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="casino-bl-box-item casino-card-img">
-              <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/heart.png">
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="casino-bl-box-item casino-card-img">
-              <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/club.png">
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="casino-bl-box-item casino-card-img">
-              <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/diamond.png">
-            </div>
-          </div>
-        </div>
-        <div class="casino-box-row">
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">3.79</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">3.79</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">3.79</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">3.79</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="teen1daycenter"></div>
-    <div class="teen1dayright">
-      <div>
-        <div class="casino-box-row casino-odds">
-          <div class="text-left w-100">
-            <b class="text-playerb">Tiger</b>
-          </div>
-        </div>
-        <div class="casino-box-row">
-          <div class="casino-bl-box">
-            <b>2.1</b>
-          </div>
-          <div class="casino-bl-box">
-            <b>1.79</b>
-          </div>
-          <div class="casino-bl-box">
-            <b>1.95</b>
-          </div>
-          <div class="casino-bl-box">
-            <b>1.95</b>
-          </div>
-        </div>
-        <div class="casino-box-row">
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">Even</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">Odd</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item casino-card-img">
-              <span>
-                <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/spade.png">
-                <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/club.png">
-              </span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item casino-card-img">
-              <span>
-                <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/heart.png">
-                <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/diamond.png">
-              </span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mt-3">
-        <div class="casino-box-row">
-          <div class="casino-bl-box">
-            <div class="casino-bl-box-item casino-card-img">
-              <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/spade.png">
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="casino-bl-box-item casino-card-img">
-              <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/heart.png">
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="casino-bl-box-item casino-card-img">
-              <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/club.png">
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="casino-bl-box-item casino-card-img">
-              <img src="https://wver.sprintstaticdata.com/v162/static/front/img/cards/diamond.png">
-            </div>
-          </div>
-        </div>
-        <div class="casino-box-row">
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">3.79</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">3.79</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">3.79</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-          <div class="casino-bl-box">
-            <div class="back casino-bl-box-item">
-              <span class="casino-box-odd">3.79</span>
-              <span class="d-none">0</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!---->
-  <!---->
 </div>

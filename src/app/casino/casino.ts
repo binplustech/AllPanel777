@@ -55,7 +55,7 @@ export class Casino implements OnInit, OnDestroy {
 					}
 					this.gameData.set(data.data);
 					this.bets = data.data.sub;
-					// this.startInterval();
+					this.startInterval();
 				}
 			},
 			error: (): void => {
@@ -87,7 +87,7 @@ export class Casino implements OnInit, OnDestroy {
 			clearInterval(this.intervalId);
 		}
 		this.intervalId = setInterval((): void => {
-			this.loadGameContent(this.gameName);
+			this.loadGameContent(this.currentGameName);
 		}, 1000);
 	}
 
