@@ -46,35 +46,35 @@
                 </div>
                 <!-- Custom Section (changes per table) -->
                 @if (gameData()) {
-                    @if ([CasinoTablesType.lucky7, CasinoTablesType.lucky5, CasinoTablesType.lucky7eu2, CasinoTablesType.lucky7eu].includes(currentGameName)) {
+                    @if ([CasinoTablesType['lucky7'], CasinoTablesType['lucky5'], CasinoTablesType['lucky7eu2'], CasinoTablesType['lucky7eu']].includes(currentGameName)) {
                         <app-lucky7 [gameData]="gameData()"></app-lucky7>
-                    } @else if (CasinoTablesType.lucky15 === currentGameName) {
+                    } @else if (CasinoTablesType['lucky15'] === currentGameName) {
                         <app-lucky15 [gameData]="gameData()"></app-lucky15>
-                    } @else if (CasinoTablesType.ab3 === currentGameName) {
+                    } @else if (CasinoTablesType['ab3'] === currentGameName) {
                         <app-ab3 [gameData]="gameData()"></app-ab3>
-                    } @else if (CasinoTablesType.ab4 === currentGameName) {
+                    } @else if (CasinoTablesType['ab4'] === currentGameName) {
                         <app-ab3 [gameData]="gameData()"></app-ab3>
-                    } @else if (CasinoTablesType.andarbahar  === currentGameName) {
+                    } @else if (CasinoTablesType['andarbahar']  === currentGameName) {
                         <app-ab3 [gameData]="gameData()"></app-ab3>
-                    } @else if (CasinoTablesType.andarbahar2  === currentGameName) {
+                    } @else if (CasinoTablesType['andarbahar2']  === currentGameName) {
                         <app-andarbahar2 [gameData]="gameData()"></app-andarbahar2>
                     } @else if (CasinoTablesType["Card32-A"] === currentGameName) {
                         <app-card32-a [gameData]="gameData()"></app-card32-a>
                     } @else if (CasinoTablesType["Card32-B"] === currentGameName) {
                         <app-card32-b [gameData]="gameData()"></app-card32-b>
-                    } @else if (CasinoTablesType.dragontigerliont20 === currentGameName) {
+                    } @else if (CasinoTablesType['dragontigerliont20'] === currentGameName) {
                         <app-dragontigerliont20 [gameData]="gameData()"></app-dragontigerliont20>
-                    } @else if (CasinoTablesType.dragontigeroneday === currentGameName) {
+                    } @else if (CasinoTablesType['dragontigeroneday'] === currentGameName) {
                         <app-dragontigeroneday [gameData]="gameData()"></app-dragontigeroneday>
-                    } @else if (CasinoTablesType.dragontigert20 === currentGameName) {
+                    } @else if (CasinoTablesType['dragontigert20'] === currentGameName) {
                         <app-dragontigert20 [gameData]="gameData()"></app-dragontigert20>
-                    } @else if (CasinoTablesType.dragontigert202 === currentGameName) {
+                    } @else if (CasinoTablesType['dragontigert202'] === currentGameName) {
                         <app-dragontigert20 [gameData]="gameData()"></app-dragontigert20>
-                    } @else if (CasinoTablesType.poker6player === currentGameName) {
+                    } @else if (CasinoTablesType['poker6player'] === currentGameName) {
                         <app-poker6player [gameData]="gameData()"></app-poker6player>
-                    } @else if (CasinoTablesType.pokeroneday === currentGameName) {
+                    } @else if (CasinoTablesType['pokeroneday'] === currentGameName) {
                         <app-pokeroneday [gameData]="gameData()"></app-pokeroneday>
-                    } @else if (CasinoTablesType.pokert20 === currentGameName) {
+                    } @else if (CasinoTablesType['pokert20'] === currentGameName) {
                         <app-pokert20 [gameData]="gameData()"></app-pokert20>
                     } @else {
                         <div class="casino-detail">
@@ -113,15 +113,15 @@
 <ng-template #finalResult>
     @if (casinoResKeys) {
         @for (item of gameResult()?.data?.res; track item.mid) {
-            @if ([CasinoTablesType.lucky7, CasinoTablesType.lucky5, CasinoTablesType.lucky7eu2 , CasinoTablesType.lucky7eu].includes(currentGameName)) {
+            @if ([CasinoTablesType['lucky7'], CasinoTablesType['lucky5'], CasinoTablesType['lucky7eu2'] , CasinoTablesType['lucky7eu']].includes(currentGameName)) {
                 <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
                     {{ casinoResKeys[item.win] }}
                 </span>
-            } @else if ([CasinoTablesType.ab3].includes(currentGameName) ) {
+            } @else if ([CasinoTablesType['ab3']].includes(currentGameName) ) {
                 <span class="resultb">
                     {{ casinoResKeys[item.win] }}
                 </span>
-            } @else if ([CasinoTablesType.dragontigert20, CasinoTablesType.dragontigeroneday, CasinoTablesType.dragontigert202, CasinoTablesType.dragontigerliont20].includes(currentGameName) ) {
+            } @else if ([CasinoTablesType['dragontigert20'], CasinoTablesType['dragontigeroneday'], CasinoTablesType['dragontigert202'], CasinoTablesType['dragontigerliont20']].includes(currentGameName) ) {
                 @if (casinoResKeys[item.win] === 'T') {
                     <span class="resultb">
                         {{ casinoResKeys[item.win] }}
@@ -136,6 +136,18 @@
 
                 @if (casinoResKeys[item.win] === 'D') {
                     <span class="resulta">
+                        {{ casinoResKeys[item.win] }}
+                    </span>
+                }
+            } @else if ([CasinoTablesType['pokert20']].includes(currentGameName)) {
+                @if (casinoResKeys[item.win] === 'A') {
+                    <span class="resulta">
+                        {{ casinoResKeys[item.win] }}
+                    </span>
+                }
+
+                @if (casinoResKeys[item.win] === 'B') {
+                    <span class="resultb">
                         {{ casinoResKeys[item.win] }}
                     </span>
                 }

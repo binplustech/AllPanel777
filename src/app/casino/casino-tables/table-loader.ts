@@ -39,24 +39,45 @@
 //   poker6player : Poker6player
 // };
 
-export enum CasinoTablesType {
-	lucky5= 'lucky5',
-	lucky7= 'lucky7',
-	lucky7eu= 'lucky7eu',
-	lucky7eu2= 'lucky7eu2',
-	lucky15= 'lucky15',
-	andarbahar= 'ab20',
-	andarbahar2= 'abj',
-	ab3= 'Ab3',
-	ab4= 'Ab4',
-	'Card32-A'= 'card32',
-	'Card32-B'= 'card32eu',
-	dragontigert20= 'dt20',
-	dragontigeroneday= 'dt6',
-	dragontigerliont20= 'dtl20',
-	dragontigert202= 'dt202',
-	pokeroneday= 'poker',
-	pokert20= 'poker20',
-	poker6player= 'poker6',
-	default= 'default'
-}
+export const CasinoTablesType: { [key: string]: string; } = {
+	lucky5: 'lucky5',
+	lucky7: 'lucky7',
+	lucky7eu: 'lucky7eu',
+	lucky7eu2: 'lucky7eu2',
+	lucky15: 'lucky15',
+	andarbahar: 'ab20',
+	andarbahar2: 'abj',
+	ab3: 'Ab3',
+	ab4: 'Ab4',
+	'card32-A': 'card32',
+	'card32-B': 'card32eu',
+	dragontigert20: 'dt20',
+	dragontigeroneday: 'dt6',
+	dragontigerliont20: 'dtl20',
+	dragontigert202: 'dt202',
+	pokeroneday: 'poker',
+	pokert20: 'poker20',
+	poker6player: 'poker6',
+	default: 'default'
+};
+
+export const pokert20Keys = {
+	'Winner Player A': 'Winner Player A',
+	'One Pair Player A': 'One Pair Player A',
+	'Two Pair Player A': 'Two Pair Player A',
+	'Three of a Kind Player A': 'Three of a Kind Player A',
+	'Straight Player A': 'Straight Player A',
+	'Flush Player A': 'Flush Player A',
+	'Full House Player A': 'Full House Player A',
+	'Four of a Kind Player A': 'Four of a Kind Player A',
+	'Straight Flush Player A': 'Straight Flush Player A',
+	'Winner Player B': 'Winner Player B',
+	'One Pair Player B': 'One Pair Player B',
+	'Two Pair Player B': 'Two Pair Player B',
+	'Three of a Kind Player B': 'Three of a Kind Player B',
+	'Straight Player B': 'Straight Player B',
+	'Flush Player B': 'Flush Player B',
+	'Full House Player B': 'Full House Player B',
+	'Four of a Kind Player B': 'Four of a Kind Player B',
+	'Straight Flush Player B': 'Straight Flush Player B'
+};

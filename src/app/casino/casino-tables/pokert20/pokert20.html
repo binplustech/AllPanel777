@@ -2,6 +2,7 @@
   <div class="poker20casino-container d-none-small">
     <div class="poker20left">
       <div>
+
         <div class="casino-bl-box casino-bl-box-title">
           <div class="casino-bl-box-item">
             <span>Winner</span>
@@ -13,17 +14,18 @@
             <span>Two Pair</span>
           </div>
         </div>
+
         <div class="casino-bl-box">
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">1.98</span>
+          <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Winner Player A']].gstatus === 'SUSPENDED' }">
+            <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Winner Player A']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">2</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['One Pair Player A']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['One Pair Player A']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">3.75</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Two Pair Player A']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Two Pair Player A']].b }} </span>
             <span class="d-none">0</span>
           </div>
         </div>
@@ -41,16 +43,16 @@
           </div>
         </div>
         <div class="casino-bl-box">
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">16</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Three of a Kind Player A']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Three of a Kind Player A']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">16</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Straight Player A']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Straight Player A']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">26</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Flush Player A']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Flush Player A']].b }} </span>
             <span class="d-none">0</span>
           </div>
         </div>
@@ -68,16 +70,16 @@
           </div>
         </div>
         <div class="casino-bl-box">
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">29</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Full House Player A']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Full House Player A']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">251</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Four of a Kind Player A']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Four of a Kind Player A']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">501</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Straight Flush Player A']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Straight Flush Player A']].b }} </span>
             <span class="d-none">0</span>
           </div>
         </div>
@@ -98,16 +100,16 @@
           </div>
         </div>
         <div class="casino-bl-box">
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">1.98</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Winner Player B']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Winner Player B']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">2</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['One Pair Player B']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['One Pair Player B']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">3.75</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Two Pair Player B']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Two Pair Player B']].b }} </span>
             <span class="d-none">0</span>
           </div>
         </div>
@@ -125,16 +127,16 @@
           </div>
         </div>
         <div class="casino-bl-box">
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">16</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Three of a Kind Player B']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Three of a Kind Player B']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">16</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Straight Player B']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Straight Player B']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">26</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Flush Player B']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Flush Player B']].b }} </span>
             <span class="d-none">0</span>
           </div>
         </div>
@@ -152,23 +154,20 @@
           </div>
         </div>
         <div class="casino-bl-box">
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">29</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Full House Player B']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Full House Player B']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">251</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Four of a Kind Player B']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Four of a Kind Player B']].b }} </span>
             <span class="d-none">0</span>
           </div>
-          <div class="back casino-bl-box-item">
-            <span class="casino-box-odd">501</span>
+            <div class="back casino-bl-box-item" [ngClass]="{ 'suspended': dataByCardsName[pokert20Keys['Straight Flush Player B']].gstatus === 'SUSPENDED' }">
+              <span class="casino-box-odd"> {{ dataByCardsName[pokert20Keys['Straight Flush Player B']].b }} </span>
             <span class="d-none">0</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!---->
-  <!---->
-  <!---->
 </div>
