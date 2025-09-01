@@ -9,8 +9,8 @@ import { CasinoTablesType } from "../casino/casino-tables/table-loader";
 	providedIn: 'root'
 })
 export class CasinoService {
-	// private readonly baseUrl: string = environment.apiUrl + 'casino/';
-	private readonly baseUrl: string = environment.apiUrl;
+	private readonly baseUrl: string = environment.apiUrl + 'casino/';
+	// private readonly baseUrl: string = environment.apiUrl;
 	private readonly http: HttpClient = inject(HttpClient);
 	public readonly casinoResultKeys: { [key: string]: { [key: string]: string; } } = {
 		[CasinoTablesType['lucky7']]: {"0":"T","1":"L","2":"H","3":"7x"},
@@ -50,10 +50,10 @@ export class CasinoService {
 	};
 
 	public getCasinoData(type: string): Observable<ICasino> {
-		// const url = `${this.baseUrl}data`;
-		const url = `${this.baseUrl}getdata/${type}`;
-		// const params = new HttpParams().set('type', type);
-		return this.http.get<ICasino>(url);
+		const url = `${this.baseUrl}data`;
+		// const url = `${this.baseUrl}getdata/${type}`;
+		const params = new HttpParams().set('type', type);
+		return this.http.get<ICasino>(url, { params });
 	}
 
 	public getCasinoTVUrl(type: string): Observable<ICasinoTVUrl> {
@@ -63,9 +63,9 @@ export class CasinoService {
 	}
 
 	public getCasinoResult(type: string): Observable<ICasinoResult> {
-		// const url = `${this.baseUrl}result`;
-		const url = `${this.baseUrl}getresult/${type}`;
-		// const params = new HttpParams().set('type', type);
-		return this.http.get<ICasinoResult>(url);
+		const url = `${this.baseUrl}result`;
+		// const url = `${this.baseUrl}getresult/${type}`;
+		const params = new HttpParams().set('type', type);
+		return this.http.get<ICasinoResult>(url, { params });
 	}
 }
