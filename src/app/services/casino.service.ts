@@ -4,6 +4,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ICasino, ICasinoResult, ICasinoTVUrl } from "../models/casino.model";
 import { CasinoTablesType } from "../casino/casino-tables/table-loader";
+import { Casino } from "../casino/casino";
 
 @Injectable({
 	providedIn: 'root'
@@ -25,6 +26,7 @@ export class CasinoService {
 		[CasinoTablesType['dragontigert202']]: { '2': 'T', '1': 'D' },
 		[CasinoTablesType['dragontigerliont20']]: { '0': 'T', '1': 'D', '2': 'L' },
 		[CasinoTablesType['pokert20']]: { '1': 'A', '2': 'B', },
+		[CasinoTablesType['card32-A']]: { '1':'8', '2': '9', '3': '10', '4': '11' }
 	};
 
 	public readonly classesByGameType: { [key: string]: string } = {

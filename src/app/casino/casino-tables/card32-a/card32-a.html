@@ -1,1 +1,61 @@
-<p>card32-a works!</p>
+<div class="casino-detail">
+    <div class="teen1daycasino-container d-none-small">
+        <div class="teen1dayleft">
+            <div class="casino-box-row">
+                <div class="casino-nation-name"><b>Player 8</b>
+                    <div class="float-right"><span class="mr-2 d-none"></span></div>
+                </div>
+                <div class="casino-bl-box">
+                    <div class="back casino-bl-box-item" [ngClass]="{'suspended': dataByCardsName['1'].gstatus == 'SUSPENDED'}">
+                        <span class="casino-box-odd"> {{ dataByCardsName['1'].b }} </span>
+                    </div>
+                    <div class="lay casino-bl-box-item" [ngClass]="{'suspended': dataByCardsName['1'].gstatus == 'SUSPENDED'}">
+                        <span class="casino-box-odd"> {{ dataByCardsName['1'].l }} </span>
+                    </div>
+                </div>
+            </div>
+            <div class="casino-box-row">
+                <div class="casino-nation-name"><b>Player 9</b>
+                    <div class="float-right"><span class="mr-2 d-none"></span></div>
+                </div>
+                <div class="casino-bl-box">
+                    <div class="back casino-bl-box-item" [ngClass]="{'suspended': dataByCardsName['2'].gstatus == 'SUSPENDED'}">
+                        <span class="casino-box-odd"> {{ dataByCardsName['2'].b }} </span>
+                    </div>
+                    <div class="lay casino-bl-box-item" [ngClass]="{'suspended': dataByCardsName['2'].gstatus == 'SUSPENDED'}">
+                        <span class="casino-box-odd"> {{ dataByCardsName['2'].l }} </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="teen1daycenter"></div>
+        <div class="teen1dayright">
+            <div class="casino-box-row">
+                <div class="casino-nation-name"><b>Player 10</b>
+                    <div class="float-right"><span class="mr-2 d-none"></span></div>
+                </div>
+                <div class="casino-bl-box">
+                    <div class="back casino-bl-box-item" [ngClass]="{'suspended': dataByCardsName['3'].gstatus == 'SUSPENDED'}">
+                        <span class="casino-box-odd"> {{ dataByCardsName['3'].b }} </span>
+                    </div>
+                    <div class="lay casino-bl-box-item" [ngClass]="{'suspended': dataByCardsName['3'].gstatus == 'SUSPENDED'}">
+                        <span class="casino-box-odd"> {{ dataByCardsName['3'].l }} </span>
+                    </div>
+                </div>
+            </div>
+            <div class="casino-box-row">
+                <div class="casino-nation-name"><b>Player 11</b>
+                    <div class="float-right"><span class="mr-2 d-none"></span></div>
+                </div>
+                <div class="casino-bl-box">
+                    <div class="back casino-bl-box-item" [ngClass]="{'suspended': dataByCardsName['4'].gstatus == 'SUSPENDED'}">
+                        <span class="casino-box-odd"> {{ dataByCardsName['4'].b }} </span>
+                    </div>
+                    <div class="lay casino-bl-box-item" [ngClass]="{'suspended': dataByCardsName['4'].gstatus == 'SUSPENDED'}">
+                        <span class="casino-box-odd"> {{ dataByCardsName['4'].l }} </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

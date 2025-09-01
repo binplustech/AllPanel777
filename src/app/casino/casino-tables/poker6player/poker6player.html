@@ -12,7 +12,7 @@
                   <b>Player 1</b>
                 </div>
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["11"].gstatus === "SUSPENDED" }'>
                     <div>
                       <span class="player-card">
                         <span>
@@ -26,7 +26,7 @@
                       </span>
                     </div>
                     <span class="float-right mr-1 flex-odds">
-                      <b class="d-block text-right">5.2</b>
+                      <b class="d-block text-right"> {{ dataByCardsName["11"].b }} </b>
                       <span class="w-100 text-right d-none">0</span>
                     </span>
                   </div>
@@ -39,7 +39,7 @@
                   <b>Player 2</b>
                 </div>
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["12"].gstatus === "SUSPENDED" }'>
                     <div>
                       <span class="player-card">
                         <span>
@@ -53,7 +53,7 @@
                       </span>
                     </div>
                     <span class="float-right mr-1 flex-odds">
-                      <b class="d-block text-right">5.2</b>
+                      <b class="d-block text-right"> {{ dataByCardsName["12"].b }} </b>
                       <span class="w-100 text-right d-none">0</span>
                     </span>
                   </div>
@@ -66,7 +66,7 @@
                   <b>Player 3</b>
                 </div>
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["13"].gstatus === "SUSPENDED" }'>
                     <div>
                       <span class="player-card">
                         <span>
@@ -80,7 +80,7 @@
                       </span>
                     </div>
                     <span class="float-right mr-1 flex-odds">
-                      <b class="d-block text-right">5.2</b>
+                      <b class="d-block text-right"> {{ dataByCardsName["13"].b }} </b>
                       <span class="w-100 text-right d-none">0</span>
                     </span>
                   </div>
@@ -93,7 +93,7 @@
                   <b>Player 4</b>
                 </div>
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["14"].gstatus === "SUSPENDED" }'>
                     <div>
                       <span class="player-card">
                         <span>
@@ -107,7 +107,7 @@
                       </span>
                     </div>
                     <span class="float-right mr-1 flex-odds">
-                      <b class="d-block text-right">5.2</b>
+                      <b class="d-block text-right"> {{ dataByCardsName["14"].b }} </b>
                       <span class="w-100 text-right d-none">0</span>
                     </span>
                   </div>
@@ -120,7 +120,7 @@
                   <b>Player 5</b>
                 </div>
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["15"].gstatus === "SUSPENDED" }'>
                     <div>
                       <span class="player-card">
                         <span>
@@ -134,7 +134,7 @@
                       </span>
                     </div>
                     <span class="float-right mr-1 flex-odds">
-                      <b class="d-block text-right">5.2</b>
+                      <b class="d-block text-right"> {{ dataByCardsName["15"].b }} </b>
                       <span class="w-100 text-right d-none">0</span>
                     </span>
                   </div>
@@ -147,7 +147,7 @@
                   <b>Player 6</b>
                 </div>
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["16"].gstatus === "SUSPENDED" }'>
                     <div>
                       <span class="player-card">
                         <span>
@@ -161,7 +161,7 @@
                       </span>
                     </div>
                     <span class="float-right mr-1 flex-odds">
-                      <b class="d-block text-right">5.2</b>
+                      <b class="d-block text-right"> {{ dataByCardsName["16"].b }} </b>
                       <span class="w-100 text-right d-none">0</span>
                     </span>
                   </div>
@@ -170,6 +170,7 @@
             </div>
           </div>
         </div>
+
         <div class="teen1daycenter"></div>
         <div class="teen1dayright pattern">
           <h4>Pattern</h4>
@@ -177,13 +178,13 @@
             <div class="casino-col-container">
               <div class="casino-box-row">
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["21"].gstatus === "SUSPENDED" }'>
                     <div>
                       <b>High Card</b>
                     </div>
                     <div class="flex-odds">
                       <span class="d-block text-right">
-                        <b>100</b>
+                        <b>{{ dataByCardsName["21"].b }}</b>
                       </span>
                       <span class="w-100 text-right d-none">0</span>
                     </div>
@@ -194,13 +195,13 @@
             <div class="casino-col-container">
               <div class="casino-box-row">
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["22"].gstatus === "SUSPENDED" }'>
                     <div>
                       <b>Pair</b>
                     </div>
                     <div class="flex-odds">
                       <span class="d-block text-right">
-                        <b>5.8</b>
+                        <b>{{ dataByCardsName["22"].b }}</b>
                       </span>
                       <span class="w-100 text-right d-none">0</span>
                     </div>
@@ -211,13 +212,13 @@
             <div class="casino-col-container">
               <div class="casino-box-row">
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["23"].gstatus === "SUSPENDED" }'>
                     <div>
                       <b>Two Pair</b>
                     </div>
                     <div class="flex-odds">
                       <span class="d-block text-right">
-                        <b>3.1</b>
+                        <b>{{ dataByCardsName["23"].b }}</b>
                       </span>
                       <span class="w-100 text-right d-none">0</span>
                     </div>
@@ -228,13 +229,13 @@
             <div class="casino-col-container">
               <div class="casino-box-row">
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["24"].gstatus === "SUSPENDED" }'>
                     <div>
                       <b>Three of a Kind</b>
                     </div>
                     <div class="flex-odds">
                       <span class="d-block text-right">
-                        <b>6.8</b>
+                        <b>{{ dataByCardsName["24"].b }}</b>
                       </span>
                       <span class="w-100 text-right d-none">0</span>
                     </div>
@@ -245,13 +246,13 @@
             <div class="casino-col-container">
               <div class="casino-box-row">
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["25"].gstatus === "SUSPENDED" }'>
                     <div>
                       <b>Straight</b>
                     </div>
                     <div class="flex-odds">
                       <span class="d-block text-right">
-                        <b>5.7</b>
+                        <b>{{ dataByCardsName["25"].b }}</b>
                       </span>
                       <span class="w-100 text-right d-none">0</span>
                     </div>
@@ -262,13 +263,13 @@
             <div class="casino-col-container">
               <div class="casino-box-row">
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["26"].gstatus === "SUSPENDED" }'>
                     <div>
                       <b>Flush</b>
                     </div>
                     <div class="flex-odds">
                       <span class="d-block text-right">
-                        <b>8.7</b>
+                        <b>{{ dataByCardsName["26"].b }}</b>
                       </span>
                       <span class="w-100 text-right d-none">0</span>
                     </div>
@@ -279,13 +280,13 @@
             <div class="casino-col-container fullbox">
               <div class="casino-box-row">
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["27"].gstatus === "SUSPENDED" }'>
                     <div>
                       <b>Full House</b>
                     </div>
                     <div class="flex-odds">
                       <span class="d-block text-right">
-                        <b>8.7</b>
+                        <b>{{ dataByCardsName["27"].b }}</b>
                       </span>
                       <span class="w-100 text-right d-none">0</span>
                     </div>
@@ -296,13 +297,13 @@
             <div class="casino-col-container fullbox">
               <div class="casino-box-row">
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["28"].gstatus === "SUSPENDED" }'>
                     <div>
                       <b>Four of a Kind</b>
                     </div>
                     <div class="flex-odds">
                       <span class="d-block text-right">
-                        <b>80</b>
+                        <b>{{ dataByCardsName["28"].b }}</b>
                       </span>
                       <span class="w-100 text-right d-none">0</span>
                     </div>
@@ -313,13 +314,13 @@
             <div class="casino-col-container fullbox">
               <div class="casino-box-row">
                 <div class="poker6box">
-                  <div class="casino-nation-name">
+                  <div class="casino-nation-name" [ngClass]='{ "suspended": dataByCardsName["29"].gstatus === "SUSPENDED" }'>
                     <div>
                       <b>Straight Flush</b>
                     </div>
                     <div class="flex-odds">
                       <span class="d-block text-right">
-                        <b>100</b>
+                        <b>{{ dataByCardsName["29"].b }}</b>
                       </span>
                       <span class="w-100 text-right d-none">0</span>
                     </div>
@@ -337,7 +338,7 @@
     <div class="remark-icon">
       <img src="https://wver.sprintstaticdata.com/v162/static/front/img/icons/remark.png">
     </div>
-    <marquee></marquee>
+    <marquee> {{ gameData?.remark }} </marquee>
   </div>
   <!---->
 </div>

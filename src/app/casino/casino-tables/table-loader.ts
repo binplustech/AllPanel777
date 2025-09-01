@@ -60,24 +60,3 @@ export const CasinoTablesType: { [key: string]: string; } = {
 	poker6player: 'poker6',
 	default: 'default'
 };
-
-export const pokert20Keys = {
-	11: 'Winner',
-	12: 'One Pair',
-	13: 'Two Pair',
-	14: 'Three of a Kind',
-	15: 'Straight',
-	16: 'Flush',
-	17: 'Full House',
-	18: 'Four of a Kind',
-	19: 'Straight Flush',
-	21: 'Winner',
-	22: 'One Pair',
-	23: 'Two Pair',
-	24: 'Three of a Kind',
-	25: 'Straight',
-	26: 'Flush',
-	27: 'Full House',
-	28: 'Four of a Kind',
-	29: 'Straight Flush'
-};

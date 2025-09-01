@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { IData } from "../../../models/casino.model";
+import { Component, Input, OnChanges } from '@angular/core';
+import { IData, ISub } from "../../../models/casino.model";
 
 @Component({
   selector: 'app-card32-a',
@@ -7,6 +7,16 @@ import { IData } from "../../../models/casino.model";
   templateUrl: './card32-a.html',
   styleUrl: './card32-a.css'
 })
-export class Card32A {
+export class Card32A implements OnChanges {
+	public dataByCardsName: { [key: string]: ISub } = {};
 	@Input() gameData!: IData | null;
+
+	ngOnChanges(): void {
+		if (this.gameData) {
+			this.dataByCardsName = this.gameData.sub.reduce((acc, item) => {
+				acc[item.sid] = item;
+				return acc;
+			}, { } as { [key: string]: ISub });
+		}
+	}
 }

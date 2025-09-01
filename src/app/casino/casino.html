@@ -58,9 +58,9 @@
                         <app-ab3 [gameData]="gameData()"></app-ab3>
                     } @else if (CasinoTablesType['andarbahar2']  === currentGameName) {
                         <app-andarbahar2 [gameData]="gameData()"></app-andarbahar2>
-                    } @else if (CasinoTablesType["Card32-A"] === currentGameName) {
+                    } @else if (CasinoTablesType["card32-A"] === currentGameName) {
                         <app-card32-a [gameData]="gameData()"></app-card32-a>
-                    } @else if (CasinoTablesType["Card32-B"] === currentGameName) {
+                    } @else if (CasinoTablesType["card32-B"] === currentGameName) {
                         <app-card32-b [gameData]="gameData()"></app-card32-b>
                     } @else if (CasinoTablesType['dragontigerliont20'] === currentGameName) {
                         <app-dragontigerliont20 [gameData]="gameData()"></app-dragontigerliont20>
@@ -151,6 +151,10 @@
                         {{ casinoResKeys[item.win] }}
                     </span>
                 }
+            } @else if([CasinoTablesType['card32-A']].includes(currentGameName)) {
+                <span class="resultb">
+                        {{ casinoResKeys[item.win] }}
+                    </span>
             } @else {
                 <span [ngClass]="{ 'resultlow': casinoResKeys[item.win] === 'L', 'resulthigh': casinoResKeys[item.win] === 'H' }">
                     {{ casinoResKeys[item.win] }}

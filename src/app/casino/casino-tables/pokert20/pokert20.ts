@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { IData, ISub } from "../../../models/casino.model";
-import { pokert20Keys } from "../table-loader";
 
 @Component({
   selector: 'app-pokert20',
@@ -15,12 +14,9 @@ export class Pokert20 implements OnChanges {
 	ngOnChanges(): void {
 		if (this.gameData) {
 			this.dataByCardsName = this.gameData.sub.reduce((acc, item) => {
-				acc[item.nat] = item;
+				acc[item.sid] = item;
 				return acc;
 			}, { } as { [key: string]: ISub });
-			console.log(this.dataByCardsName);
 		}
 	}
-
-	protected readonly pokert20Keys = pokert20Keys;
 }
