@@ -39,7 +39,32 @@ import { Pokert20 } from './casino/casino-tables/pokert20/pokert20';
 import { Poker6player } from './casino/casino-tables/poker6player/poker6player';
 import { HttpClientModule } from "@angular/common/http";
 import { CardImageUrl } from "./pipes/imageUrl.pipe";
-import { AndarBaharCardLayout } from './cards/andar-bahar-card-layout/andar-bahar-card-layout';
+import { AndarBaharCardLayout } from './casino/casino-tables/andar-bahar-card-layout/andar-bahar-card-layout';
+import { Cardbaccarat29 } from './casino/casino-tables/baccarat-tables/cardbaccarat29/cardbaccarat29';
+import { Baccarat } from './casino/casino-tables/baccarat-tables/baccarat/baccarat';
+import { Baccarat2 } from './casino/casino-tables/baccarat-tables/baccarat2/baccarat2';
+import { OneRoulette } from './casino/casino-tables/roulette/one-roulette/one-roulette';
+import { Roulette11 } from './casino/casino-tables/roulette/roulette11/roulette11';
+import { Roulette12 } from './casino/casino-tables/roulette/roulette12/roulette12';
+import { Roulette13 } from './casino/casino-tables/roulette/roulette13/roulette13';
+import { Instantteenpatti } from './casino/casino-tables/teenpatti-20/instantteenpatti/instantteenpatti';
+import { Instantteenpatti2 } from './casino/casino-tables/teenpatti-20/instantteenpatti2/instantteenpatti2';
+import { Instantteenpatti3 } from './casino/casino-tables/teenpatti-20/instantteenpatti3/instantteenpatti3';
+import { Jokerteenpatti1 } from './casino/casino-tables/teenpatti-20/jokerteenpatti1/jokerteenpatti1';
+import { Jokerteenpatti20 } from './casino/casino-tables/teenpatti-20/jokerteenpatti20/jokerteenpatti20';
+import { Jokerteenpatti120 } from './casino/casino-tables/teenpatti-20/jokerteenpatti120/jokerteenpatti120';
+import { Teenmuf } from './casino/casino-tables/teenpatti-20/teenmuf/teenmuf';
+import { Teenpatti2 } from './casino/casino-tables/teenpatti-20/teenpatti2/teenpatti2';
+import { Teenpatti2cards } from './casino/casino-tables/teenpatti-20/teenpatti2cards/teenpatti2cards';
+import { Teenpatti41 } from './casino/casino-tables/teenpatti-20/teenpatti41/teenpatti41';
+import { Teenpatti42 } from './casino/casino-tables/teenpatti-20/teenpatti42/teenpatti42';
+import { Teenpattioneday } from './casino/casino-tables/teenpatti-20/teenpattioneday/teenpattioneday';
+import { Teenpattiopen } from './casino/casino-tables/teenpatti-20/teenpattiopen/teenpattiopen';
+import { Teenpatti20 } from './casino/casino-tables/teenpatti-20/teenpatti20/teenpatti20';
+import { Teenpatti20b } from './casino/casino-tables/teenpatti-20/teenpatti20b/teenpatti20b';
+import { Teenpatti20c } from './casino/casino-tables/teenpatti-20/teenpatti20c/teenpatti20c';
+import { Teenpattitext } from './casino/casino-tables/teenpatti-20/teenpattitext/teenpattitext';
+import { Teenunique } from './casino/casino-tables/teenpatti-20/teenunique/teenunique';
 
 @NgModule({
 	declarations: [
@@ -76,7 +101,32 @@ import { AndarBaharCardLayout } from './cards/andar-bahar-card-layout/andar-baha
 		Pokeroneday,
 		Pokert20,
 		Poker6player,
-  AndarBaharCardLayout
+		AndarBaharCardLayout,
+		Cardbaccarat29,
+		Baccarat,
+		Baccarat2,
+		OneRoulette,
+		Roulette11,
+		Roulette12,
+		Roulette13,
+		Instantteenpatti,
+		Instantteenpatti2,
+		Instantteenpatti3,
+		Jokerteenpatti1,
+		Jokerteenpatti20,
+		Jokerteenpatti120,
+		Teenmuf,
+		Teenpatti2,
+		Teenpatti2cards,
+		Teenpatti41,
+		Teenpatti42,
+		Teenpattioneday,
+		Teenpattiopen,
+		Teenpatti20,
+		Teenpatti20b,
+		Teenpatti20c,
+		Teenpattitext,
+		Teenunique
 	],
 	imports: [
 		BrowserModule,

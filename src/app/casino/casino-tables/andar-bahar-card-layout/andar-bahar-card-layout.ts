@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IData } from "../../models/casino.model";
+import { IData } from "../../../models/casino.model";
 
 @Component({
   selector: 'app-andar-bahar-card-layout',
