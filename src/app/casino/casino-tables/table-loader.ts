@@ -61,7 +61,7 @@ export const CasinoTablesType: { [key: string]: string; } = {
 	baccarat: 'baccarat',
 	baccarat2: 'baccarat2',
 	cardbaccarat29: 'cardbaccarat29',
-	'one-roulette': 'one-roulette',
+	'one-roulette': 'our-roulette',
 	roulette11: 'roulette11',
 	roulette12: 'roulette12',
 	roulette13: 'roulette13',
